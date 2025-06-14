@@ -1,0 +1,12 @@
+
+<!-- login-img.svg -->
+<svg width="500" height="500" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="100" fill="#F3F4F6"/>
+  <circle cx="512" cy="340" r="120" fill="#C084FC"/>
+  <rect x="312" y="510" width="400" height="40" rx="20" fill="#E5E7EB"/>
+  <rect x="312" y="580" width="400" height="40" rx="20" fill="#E5E7EB"/>
+  <rect x="312" y="650" width="400" height="40" rx="20" fill="#8B5CF6"/>
+  <text x="420" y="680" fill="white" font-size="20" font-family="Arial">Login</text>
+  <text x="380" y="535" fill="#6B7280" font-size="18" font-family="Arial">Email Address</text>
+  <text x="380" y="605" fill="#6B7280" font-size="18" font-family="Arial">Password</text>
+</svg>
