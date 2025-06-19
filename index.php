@@ -30,12 +30,27 @@ if (isset($_POST['send'])) {
     }
 }
 
-// Login form submit
+if (isset($_POST['register'])) {
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+
+    $check_user = $conn->prepare("SELECT * FROM re_users WHERE username = ? OR email = ?");
+    $check_user->execute([$username, $email]);
+    if ($check_user->rowCount() > 0) {
+        echo "<script>alert('Username or Email already exists!');</script>";
+    } else {
+        $insert_user = $conn->prepare("INSERT INTO re_users (username, email, password) VALUES (?, ?, ?)");
+        $insert_user->execute([$username, $email, $password]);
+        echo "<script>alert('Registration Successful! You can now login.'); window.location.href='#login';</script>";
+    }
+}
+
 if (isset($_POST['login'])) {
     $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
-    $check_user = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+    $check_user = $conn->prepare("SELECT * FROM re_users WHERE username = ? AND password = ?");
     $check_user->execute([$username, $password]);
 
     if ($check_user->rowCount() > 0) {
@@ -135,6 +150,27 @@ if (isset($_POST['login'])) {
 </div>
 
 <!-- home section ends -->
+<!-- registration section starts  -->
+
+<section class="register" id="register">
+
+   <div class="heading">
+      <img src="images/heading-img.png" alt="">
+      <h3>Register Now</h3>
+   </div>
+
+   <div class="row">
+      <form action="" method="post" style="margin: 0 auto; max-width: 400px; width: 100%; text-align: center;">
+         <h3 style="font-size: 28px; margin-bottom: 20px;">Create your account</h3>
+         <input type="text" name="username" required class="box" placeholder="Enter your username" style="margin-bottom: 15px; padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+         <input type="email" name="email" required class="box" placeholder="Enter your email" style="margin-bottom: 15px; padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+         <input type="password" name="password" required class="box" placeholder="Enter your password" style="margin-bottom: 15px; padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+         <input type="submit" name="register" value="Register Now" class="btn" style="padding: 10px 25px; font-weight: bold; background-color: #7a4f28; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+         <p style="margin-top: 15px;">Already have an account? <a href="#login">Login here</a></p>
+      </form>
+   </div>
+</section>
+
 <!-- login section starts -->
 
 <section class="login" id="login">
@@ -164,6 +200,7 @@ if (isset($_POST['login'])) {
 
 
 <!-- login section ends -->
+
 
 <!-- about section starts  -->
 
