@@ -852,34 +852,32 @@
   });
 
   function placeOrder() {
-    const addItemModalEl = document.getElementById('addItemModal');
-    const addItemModal = bootstrap.Modal.getInstance(addItemModalEl);
-    addItemModal.hide();
+    // Collect order data
+    const item = document.getElementById("modalTitle").textContent;
+    const price = document.getElementById("modalPrice").textContent;
+    const qty = document.getElementById("quantity").textContent;
 
-    const successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
-    setTimeout(() => {
-      successModal.show();
-    }, 500);
-  }
-</script>
-<script>
-  function showDrinks(category) {
-    const sections = document.querySelectorAll('.drink-section');
-    sections.forEach(section => {
-      const cardCategory = section.getAttribute('data-category');
-      if (category === 'all') {
-        section.style.display = 'block';
-      } else {
-        section.style.display = (cardCategory === category) ? 'block' : 'none';
-      }
+    // Send to PHP backend
+    fetch('save_order.php', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: `item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}&quantity=${encodeURIComponent(qty)}`
+    })
+    .then(response => response.text())
+    .then(result => {
+      // Hide modal and show order success
+      const addItemModalEl = document.getElementById('addItemModal');
+      const addItemModal = bootstrap.Modal.getInstance(addItemModalEl);
+      addItemModal.hide();
+      const successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
+      setTimeout(() => {
+        successModal.show();
+      }, 500);
+    })
+    .catch(err => {
+      alert("Order failed: " + err);
     });
   }
-
-  // ✅ Show all drinks by default
-  window.onload = () => showDrinks('hot');
-
-
-
 </script>
 
 
