@@ -118,6 +118,7 @@
   color: #444;
 }
 
+
   </style>
 
   </style>
@@ -278,6 +279,64 @@
     </div>
   </div>
 </div>
+<br><br>
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<!-- Footer Start -->
+<footer style="background-color: #fff; padding: 30px 0 20px; border-top: 1px solid #ccc; width: 100%;">
+  <div class="px-3 px-md-5"> <!-- Use padding instead of .container -->
+    <div class="row text-center justify-content-center">
+
+      <!-- Email -->
+      <div class="col-6 col-md-3 mb-3">
+        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+          <i class="fas fa-envelope text-white" style="line-height: 45px; font-size: 16px;"></i>
+        </div>
+        <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Email</h6>
+        <p style="font-size: 13px;" class="text-muted mb-0">Shaikhanas@Gmail.Com</p>
+        <p style="font-size: 13px;" class="text-muted">Anasbhai@Gmail.Com</p>
+      </div>
+
+      <!-- Opening Hours -->
+      <div class="col-6 col-md-3 mb-3">
+        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+          <i class="fas fa-clock text-white" style="line-height: 45px; font-size: 16px;"></i>
+        </div>
+        <h6 class="mt-2 mb-1" style="font-size: 16px;">Opening Hours</h6>
+        <p style="font-size: 13px;" class="text-muted">07:00am To 09:00pm</p>
+      </div>
+
+      <!-- Location -->
+      <div class="col-6 col-md-3 mb-3">
+        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+          <i class="fas fa-map-marker-alt text-white" style="line-height: 45px; font-size: 16px;"></i>
+        </div>
+        <h6 class="mt-2 mb-1" style="font-size: 16px;">Shop Location</h6>
+        <p style="font-size: 13px;" class="text-muted">Mumbai, India - 400104</p>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-6 col-md-3 mb-3">
+        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+          <i class="fas fa-phone text-white" style="line-height: 45px; font-size: 16px;"></i>
+        </div>
+        <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Number</h6>
+        <p style="font-size: 13px;" class="text-muted mb-0">+123-456-7890</p>
+        <p style="font-size: 13px;" class="text-muted">+111-222-3333</p>
+      </div>
+
+    </div>
+
+    <hr style="margin: 10px 0;">
+
+    <p class="text-center text-muted mb-0" style="font-size: 14px;">
+      © Copyright @ 2025 By <span style="color: #c4a484; font-weight: 600;">Maitri</span> | All Rights Reserved!
+    </p>
+  </div>
+</footer>
+<!-- Footer End -->
+
 
 <!-- Bootstrap JS + Script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -311,15 +370,34 @@
   });
 
   function placeOrder() {
-    const addItemModalEl = document.getElementById('addItemModal');
-    const addItemModal = bootstrap.Modal.getInstance(addItemModalEl);
-    addItemModal.hide();
+    // Collect order data
+    const item = document.getElementById("modalTitle").textContent;
+    const price = document.getElementById("modalPrice").textContent;
+    const qty = document.getElementById("quantity").textContent;
 
-    const successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
-    setTimeout(() => {
-      successModal.show();
-    }, 500);
+    // Send to PHP backend
+    fetch('save_order.php', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: `item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}&quantity=${encodeURIComponent(qty)}`
+    })
+    .then(response => response.text())
+    .then(result => {
+      // Hide modal and show order success
+      const addItemModalEl = document.getElementById('addItemModal');
+      const addItemModal = bootstrap.Modal.getInstance(addItemModalEl);
+      addItemModal.hide();
+      const successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
+      setTimeout(() => {
+        successModal.show();
+      }, 500);
+    })
+    .catch(err => {
+      alert("Order failed: " + err);
+    });
   }
+
+  
 </script>
 </body>
 </html>

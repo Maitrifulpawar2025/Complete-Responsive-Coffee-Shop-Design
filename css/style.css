@@ -350,6 +350,40 @@ section{
    color:var(--main-color);
 }
 
+.interactive-box {
+   position: relative;
+   cursor: pointer;
+   transition: transform 0.3s ease;
+}
+
+.interactive-box:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.popup {
+   position: absolute;
+   bottom: 110%;
+   left: 0;
+   width: 100%;
+   background: #fff;
+   color: #333;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 6px;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   display: none;
+   z-index: 10;
+   transition: all 0.3s ease;
+   font-size: 14px;
+}
+
+.interactive-box.active .popup {
+   display: block;
+}
+
+
+
 /* media queries  */
 
 @media (max-width:991px){

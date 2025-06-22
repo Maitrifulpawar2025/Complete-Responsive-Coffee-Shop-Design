@@ -10,9 +10,17 @@ try {
     $conn = new PDO($dsn, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $item = $_POST['item'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
+    // Always check if POST data exists to avoid undefined index notices
+    $item = isset($_POST['item']) ? trim($_POST['item']) : '';
+    $price = isset($_POST['price']) ? trim($_POST['price']) : '';
+    $quantity = isset($_POST['quantity']) ? trim($_POST['quantity']) : '';
+
+    // Basic validation (optional but recommended)
+    if ($item === '' || $price === '' || $quantity === '') {
+        http_response_code(400);
+        echo "Missing order data.";
+        exit;
+    }
 
     $stmt = $conn->prepare("INSERT INTO orders (item, price, quantity) VALUES (?, ?, ?)");
     $stmt->execute([$item, $price, $quantity]);

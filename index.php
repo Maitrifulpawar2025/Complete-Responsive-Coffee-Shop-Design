@@ -435,12 +435,11 @@ if (isset($_POST['login'])) {
 
    </div>
 
-   <div class="credit"> &copy; copyright @ <?= date('Y'); ?> by <span>Maitri</span> | all rights reserved! </div>
+   <div class="credit"> &copy; copyright @ 2022 by <span>Maitri</span> | all rights reserved! </div>
 
 </section>
 
 <!-- footer section ends -->
-
 
 
 <!-- custom js file link  -->
