@@ -119,9 +119,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="order.html">Bestseller</a></li>
-          <li class="nav-item"><a href="drink.html#drink-section">Drink</a></li>
-          <li class="nav-item"><a class="nav-link" href="food.html">Food</a></li>
+          <li class="nav-item"><a class="nav-link active" href="order.html#product-section">Bestseller</a></li>
+          <li class="nav-item"><a class="nav-link" href="drink.html#drink-section">Drink</a></li>
+          <li class="nav-item"><a class="nav-link active" href="food.html">Food</a></li>
+          <li class="nav-item"><a class="nav-link" href="order_history.html">Order History</a></li>
         </ul>
       </div>
     </div>
@@ -135,204 +136,1022 @@
     </div>
   </div>
 
-  <!-- Main Section -->
-  <div class="container py-5">
-    <h2 class="fw-bold mb-2">Sandwiches & Wraps</h2>
-    <p class="text-muted mb-4">Signature breads made with fresh ingredients and in-house sauces.</p>
-<div class="container py-4">
-
 <!-- Filter Buttons -->
 <div class="container scrollbar">
   <div class="filter-bar d-flex align-items-center flex-wrap">
-    <button class="filter-btn" onclick="showDrinks('hot')">Veg</button>
-    <button class="filter-btn" onclick="showDrinks('cold')">Non Veg</button>
-    <button class="filter-btn" onclick="showDrinks('milkshake')">Contains Egg</button>
-    <button class="filter-btn" onclick="showDrinks('black')">Spicy</button>
-    <button class="filter-btn" onclick="showDrinks('blended')">Sweet</button>
-    <button class="filter-btn" onclick="showDrinks('caffeinefree')">Healthy</button>
+    <button class="filter-btn" onclick="showDrinks('Sandwich')">Sandwich</button>
+    <button class="filter-btn" onclick="showDrinks('Wraps')">Wraps</button>
+    <button class="filter-btn" onclick="showDrinks('Puff Perfection')">Puff Perfection</button>
+    <button class="filter-btn" onclick="showDrinks('Bread & Toast')">Bread & Toast</button>
+    <button class="filter-btn" onclick="showDrinks('Maggi')">Maggi</button>
+    <button class="filter-btn" onclick="showDrinks('Savory Stacks')">Savory Stacks</button>
+    <button class="filter-btn" onclick="showDrinks('Peri Peri Fries')"> Peri Peri Fries</button>
+    <button class="filter-btn" onclick="showDrinks('sweet')">sweet</button>
   </div>
 </div>
   
     
-    <br>
+   
+    
+<!-- Container -->
+<div class="container mt-5">
+  <!-- HOT Section -->
+  <div class="food-section" data-category="Sandwich">
     <div class="row g-4">
 
-      <!-- Chilli Cheese Toast -->
-      <div class="col-md-4">
-        <div class="card p-3">
-          <div class="d-flex align-items-center">
-            <img src="Double Chocolate Chip Frappuccino.jpg" alt="Chilli Cheese Toast" data-bs-toggle="modal" data-bs-target="#ChilliCheeseToastoModal">
-            <div class="ms-3">
-              <h5 class="mb-1">Chilli Cheese Toast</h5>
-              <small class="text-muted">Per Serve (140 g)  - 471 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Cheesy and fiery snack on a toasted French-style baguette, t..</p>
-              <h6 class="fw-bold">₹ 372.75</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Basil Tomato Mozzarella Cheese Sandwich-->
-      <div class="col-md-4">
-        <div class="card p-3">
-          <div class="d-flex align-items-center">
-            <img src="Picco Cappuccino.jpg" alt="Basil Tomato Mozzarella Cheese Sandwich" data-bs-toggle="modal" data-bs-target="#BasilTomatoMozzarellaCheeseSandwichModal">
-            <div class="ms-3">
-              <h5 class="mb-1">Basil Tomato Mozzarella Cheese Sandwich</h5>
-              <small class="text-muted">Per Serve (170 g) - 484 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Tomato and mozzarella slices on a layer of basil sauce sandw..</p>
-              <h6 class="fw-bold">₹ 399.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Spinach & Corn Sandwich -->
-      <div class="col-md-4">
-        <div class="card p-3">
-          <div class="d-flex align-items-center">
-            <img src="Caffe Americano.webp" alt="Spinach & Corn Sandwich" data-bs-toggle="modal" data-bs-target="#Spinach&CornSandwichModal">
-            <div class="ms-3">
-              <h5 class="mb-1">Spinach & Corn Sandwich</h5>
-              <small class="text-muted">Per Serve (200 g )  - 541 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">A savory blend of spinach and corn, garlic & herb aioli, mel..</p>
-              <h6 class="fw-bold">₹ 273.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Paneer Tikka Sandwich -->
-      <div class="col-md-4">
-        <div class="card p-3">
-          <div class="d-flex align-items-center">
-            <img src="Cold coffee.jpg" alt="Paneer Tikka Sandwich" data-bs-toggle="modal" data-bs-target="#PaneerTikkaSandwichModal">
-            <div class="ms-3">
-              <h5 class="mb-1">Paneer Tikka Sandwich</h5>
-              <small class="text-muted">Per Serve (185 g )  - 537 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Marinated tandoori paneer filling, sliced cheese, and whole ..</p>
-              <h6 class="fw-bold">₹ 294.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
-          </div>
+  <!-- 1. Paneer Tikka Sandwich -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Paneer_Tikka_Sandwich.jpg" alt="Paneer Tikka Sandwich">
+        <div class="ms-3">
+          <h5 class="mb-1">Paneer Tikka Sandwich</h5>
+          <small class="text-muted">250g · 330 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Grilled sandwich stuffed with spicy paneer tikka and veggies.</p>
+          <h6 class="fw-bold">₹ 180.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
         </div>
       </div>
     </div>
   </div>
 
-   <!-- Mushroom Pesto Sourdough Sandwich -->
-      <div class="col-md-4">
-        <div class="card p-3">
-          <div class="d-flex align-items-center">
-            <img src="Cold coffee.jpg" alt="Mushroom Pesto Sourdough Sandwich" data-bs-toggle="modal" data-bs-target="#MushroomPestoSourdoughSandwichModal">
-            <div class="ms-3">
-              <h5 class="mb-1">Mushroom Pesto Sourdough Sandwich</h5>
-              <small class="text-muted">Per Serve (192 g) - 637 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Creamy Stracciatella cheese and an earthy mushroom, onion, g..</p>
-              <h6 class="fw-bold">₹ 472.50</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
-          </div>
+  <!-- 2. Cheese Corn Sandwich -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Cheese_Corn_Sandwich.jpg" alt="Cheese Corn Sandwich">
+        <div class="ms-3">
+          <h5 class="mb-1">Cheese Corn Sandwich</h5>
+          <small class="text-muted">200g · 280 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Creamy cheese and sweet corn filling toasted to golden perfection.</p>
+          <h6 class="fw-bold">₹ 160.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
         </div>
       </div>
     </div>
   </div>
 
-   <!-- Mediterranean Focaccia Sandwich -->
-      <div class="col-md-4">
-        <div class="card p-3">
-          <div class="d-flex align-items-center">
-            <img src="Cold coffee.jpg" alt="Mediterranean Focaccia Sandwich" data-bs-toggle="modal" data-bs-target="#MediterraneanFocacciaSandwichModal">
-            <div class="ms-3">
-              <h5 class="mb-1">Mediterranean Focaccia Sandwich</h5>
-              <small class="text-muted">Per Serve (245 g) - 573 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Crispy fried aubergine on a bed of roasted tomatoes v & bell..</p>
-              <h6 class="fw-bold">₹ 294.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
-          </div>
+  <!-- 3. Veg Club Sandwich -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Veg_Club_Sandwich.jpg" alt="Veg Club Sandwich">
+        <div class="ms-3">
+          <h5 class="mb-1">Veg Club Sandwich</h5>
+          <small class="text-muted">270g · 320 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Layered with fresh veggies, cheese, and tangy sauces.</p>
+          <h6 class="fw-bold">₹ 190.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
         </div>
       </div>
     </div>
   </div>
 
-   <!--Harissa Chicken sourdough sandwich -->
-      <div class="col-md-4">
-        <div class="card p-3">
-          <div class="d-flex align-items-center">
-            <img src="Cold coffee.jpg" alt="Avocado Salsa Sandwich" data-bs-toggle="modal" data-bs-target="#AvocadoSalsaSandwichModal">
-            <div class="ms-3">
-              <h5 class="mb-1">Avocado Salsa Sandwich</h5>
-              <small class="text-muted">Per Serve (170 g) - 337 kca</small>
-              <p class="mb-1 mt-1 text-muted small">A flavourful Avocado Sandwich with creamy guacamole, refresh..</p>
-              <h6 class="fw-bold">₹ 462.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
-          </div>
+  <!-- 4. Aloo Masala Sandwich -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Aloo_Masala_Sandwich.jpg" alt="Aloo Masala Sandwich">
+        <div class="ms-3">
+          <h5 class="mb-1">Aloo Masala Sandwich</h5>
+          <small class="text-muted">230g · 300 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Spiced mashed potatoes with herbs, toasted to crispy perfection.</p>
+          <h6 class="fw-bold">₹ 140.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
         </div>
       </div>
     </div>
   </div>
 
-
-  <!-- Modals -->
-  <div class="modal fade" id="javaModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content p-3"><div class="modal-header">
-      <h5 class="modal-title">Java Chip Frappuccino</h5>
-      <button class="btn-close" data-bs-dismiss="modal"></button>
+  <!-- 5. Veg Mayo Sandwich -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Veg_Mayo_Sandwich.jpg" alt="Veg Mayo Sandwich">
+        <div class="ms-3">
+          <h5 class="mb-1">Veg Mayo Sandwich</h5>
+          <small class="text-muted">220g · 290 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Loaded with creamy mayo, crunchy veggies, and herbs.</p>
+          <h6 class="fw-bold">₹ 150.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
     </div>
-    <div class="modal-body text-center">
-      <img src="Java Chip Frappuccino.jpg" class="img-fluid mb-3" style="max-width: 200px;"><p>Blended with mocha sauce and chips, topped with whipped cream.</p>
-      <h6 class="fw-bold">₹ 441.00</h6><button class="btn btn-success">Add to Cart</button></div></div></div>
   </div>
 
- <div class="modal fade" id="javaModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content p-3"><div class="modal-header">
-      <h5 class="modal-title">Java Chip Frappuccino</h5>
-      <button class="btn-close" data-bs-dismiss="modal"></button>
+  <!-- 6. Grilled Veggie Delight -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Grilled_Veggie_Delight.jpg" alt="Grilled Veggie Delight">
+        <div class="ms-3">
+          <h5 class="mb-1">Grilled Veggie Delight</h5>
+          <small class="text-muted">240g · 310 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">A mix of grilled capsicum, onion, tomato & cheese in brown bread.</p>
+          <h6 class="fw-bold">₹ 170.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
     </div>
-    <div class="modal-body text-center">
-      <img src="Java Chip Frappuccino.jpg" class="img-fluid mb-3" style="max-width: 200px;"><p>Blended with mocha sauce and chips, topped with whipped cream.</p>
-      <h6 class="fw-bold">₹ 441.00</h6><button class="btn btn-success">Add to Cart</button></div></div></div>
+  </div>
+</div>
+</div>
+  <!-- wrap section -->
+
+  <!-- 1. Paneer Tikka Wrap -->
+   <div class="container mt-5">
+
+   <div class="food-section" data-category="Wraps">
+    <div class="row g-4">
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Paneer_Tikka_Wrap.jpg" alt="Paneer Tikka Wrap">
+        <div class="ms-3">
+          <h5 class="mb-1">Paneer Tikka Wrap</h5>
+          <small class="text-muted">250g · 360 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Soft wrap stuffed with juicy paneer tikka, onion, and mint mayo.</p>
+          <h6 class="fw-bold">₹ 185.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="modal fade" id="javaModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content p-3"><div class="modal-header">
-      <h5 class="modal-title">Java Chip Frappuccino</h5>
-      <button class="btn-close" data-bs-dismiss="modal"></button>
+  <!-- 2. Mexican Veg Wrap -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Mexican_Veg_Wrap.jpg" alt="Mexican Veg Wrap">
+        <div class="ms-3">
+          <h5 class="mb-1">Mexican Veg Wrap</h5>
+          <small class="text-muted">240g · 310 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Loaded with beans, corn, salsa, and spicy Mexican flavors.</p>
+          <h6 class="fw-bold">₹ 170.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
     </div>
-    <div class="modal-body text-center">
-      <img src="Java Chip Frappuccino.jpg" class="img-fluid mb-3" style="max-width: 200px;"><p>Blended with mocha sauce and chips, topped with whipped cream.</p>
-      <h6 class="fw-bold">₹ 441.00</h6><button class="btn btn-success">Add to Cart</button></div></div></div>
   </div>
 
-  <div class="modal fade" id="javaModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content p-3"><div class="modal-header">
-      <h5 class="modal-title">Java Chip Frappuccino</h5>
-      <button class="btn-close" data-bs-dismiss="modal"></button>
+  <!-- 3. Cheese Garlic Wrap -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Cheese_Garlic_Wrap.jpg" alt="Cheese Garlic Wrap">
+        <div class="ms-3">
+          <h5 class="mb-1">Cheese Garlic Wrap</h5>
+          <small class="text-muted">220g · 280 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Cheesy delight with sautéed garlic veggies in soft tortilla bread.</p>
+          <h6 class="fw-bold">₹ 160.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
     </div>
-    <div class="modal-body text-center">
-      <img src="Java Chip Frappuccino.jpg" class="img-fluid mb-3" style="max-width: 200px;"><p>Blended with mocha sauce and chips, topped with whipped cream.</p>
-      <h6 class="fw-bold">₹ 441.00</h6><button class="btn btn-success">Add to Cart</button></div></div></div>
   </div>
 
-  <div class="modal fade" id="javaModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content p-3"><div class="modal-header">
-      <h5 class="modal-title">Java Chip Frappuccino</h5>
-      <button class="btn-close" data-bs-dismiss="modal"></button>
+  <!-- 4. Aloo Patty Wrap -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Aloo_Patty_Wrap.jpg" alt="Aloo Patty Wrap">
+        <div class="ms-3">
+          <h5 class="mb-1">Aloo Patty Wrap</h5>
+          <small class="text-muted">230g · 320 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Crispy aloo tikki wrapped with lettuce, onion, and spicy sauces.</p>
+          <h6 class="fw-bold">₹ 155.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
     </div>
-    <div class="modal-body text-center">
-      <img src="Java Chip Frappuccino.jpg" class="img-fluid mb-3" style="max-width: 200px;"><p>Blended with mocha sauce and chips, topped with whipped cream.</p>
-      <h6 class="fw-bold">₹ 441.00</h6><button class="btn btn-success">Add to Cart</button></div></div></div>
   </div>
+
+  <!-- 5. Veggie Delight Wrap -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Veggie_Delight_Wrap.jpg" alt="Veggie Delight Wrap">
+        <div class="ms-3">
+          <h5 class="mb-1">Veggie Delight Wrap</h5>
+          <small class="text-muted">240g · 300 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Fresh and crunchy mix of bell peppers, onion, and sauces.</p>
+          <h6 class="fw-bold">₹ 165.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Hara Bhara Kebab Wrap -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Hara_Bhara_Wrap.jpg" alt="Hara Bhara Kebab Wrap">
+        <div class="ms-3">
+          <h5 class="mb-1">Hara Bhara Kebab Wrap</h5>
+          <small class="text-muted">250g · 340 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Tandoori-style hara bhara kebab wrapped with green chutney & salad.</p>
+          <h6 class="fw-bold">₹ 175.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- puff section -->
+  <div class="container mt-5">
+ <div class="food-section" data-category="Puff Perfection">
+
+<div class="row g-4">
+
+  <!-- 1. Veg Masala Puff -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Veg_Masala_Puff.jpg" alt="Veg Masala Puff">
+        <div class="ms-3">
+          <h5 class="mb-1">Veg Masala Puff</h5>
+          <small class="text-muted">150g · 280 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Flaky puff filled with spicy mixed veg masala stuffing.</p>
+          <h6 class="fw-bold">₹ 60.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Paneer Puff -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Paneer_Puff.jpg" alt="Paneer Puff">
+        <div class="ms-3">
+          <h5 class="mb-1">Paneer Puff</h5>
+          <small class="text-muted">160g · 310 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Crispy puff stuffed with spicy paneer cubes and herbs.</p>
+          <h6 class="fw-bold">₹ 70.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Cheese Corn Puff -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Cheese_Corn_Puff.jpg" alt="Cheese Corn Puff">
+        <div class="ms-3">
+          <h5 class="mb-1">Cheese Corn Puff</h5>
+          <small class="text-muted">155g · 295 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Delicious puff loaded with creamy cheese and sweet corn.</p>
+          <h6 class="fw-bold">₹ 65.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Mushroom Puff -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Mushroom_Puff.jpg" alt="Mushroom Puff">
+        <div class="ms-3">
+          <h5 class="mb-1">Mushroom Puff</h5>
+          <small class="text-muted">160g · 320 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Creamy mushroom stuffing wrapped in buttery puff pastry.</p>
+          <h6 class="fw-bold">₹ 75.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Spicy Veg Puff -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Spicy_Veg_Puff.jpg" alt="Spicy Veg Puff">
+        <div class="ms-3">
+          <h5 class="mb-1">Spicy Veg Puff</h5>
+          <small class="text-muted">150g · 270 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Tangy and spicy mix veg puff with Indian flavors.</p>
+          <h6 class="fw-bold">₹ 55.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Spinach Corn Puff -->
+  <div class="col-md-4">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <img src="Spinach_Corn_Puff.jpg" alt="Spinach Corn Puff">
+        <div class="ms-3">
+          <h5 class="mb-1">Spinach Corn Puff</h5>
+          <small class="text-muted">155g · 300 kcal</small>
+          <p class="mb-1 mt-1 text-muted small">Healthy combo of spinach, corn and cheese in golden puff.</p>
+          <h6 class="fw-bold">₹ 70.00</h6>
+          <button class="btn btn-sm btn-add">Add Item</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+
+
+    <!-- Bread & Toast Section -->
+     
+<div class="food-section" data-category="Bread & Toast">
+  <div class="row g-4">
+
+    <!-- 1. Classic Garlic Bread -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Classic_Garlic_Bread.jpg" alt="Classic Garlic Bread">
+          <div class="ms-3">
+            <h5 class="mb-1">Classic Garlic Bread</h5>
+            <small class="text-muted">180g · 250 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Toasted bread topped with garlic butter and herbs.</p>
+            <h6 class="fw-bold">₹ 120.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Cheesy Garlic Bread -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Cheesy_Garlic_Bread.jpg" alt="Cheesy Garlic Bread">
+          <div class="ms-3">
+            <h5 class="mb-1">Cheesy Garlic Bread</h5>
+            <small class="text-muted">200g · 310 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Crispy garlic bread loaded with melted cheese and oregano.</p>
+            <h6 class="fw-bold">₹ 140.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Masala Bun Toast -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Masala_Bun_Toast.jpg" alt="Masala Bun Toast">
+          <div class="ms-3">
+            <h5 class="mb-1">Masala Bun Toast</h5>
+            <small class="text-muted">190g · 270 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Spiced aloo and chutney filling inside grilled butter bun.</p>
+            <h6 class="fw-bold">₹ 130.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Butter Toast -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Butter_Toast.jpg" alt="Butter Toast">
+          <div class="ms-3">
+            <h5 class="mb-1">Butter Toast</h5>
+            <small class="text-muted">160g · 220 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Classic brown bread toasted with desi butter.</p>
+            <h6 class="fw-bold">₹ 100.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Veg Masala Toast -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Veg_Masala_Toast.jpg" alt="Veg Masala Toast">
+          <div class="ms-3">
+            <h5 class="mb-1">Veg Masala Toast</h5>
+            <small class="text-muted">200g · 300 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Mixed veggies, green chutney, and spices layered over toast.</p>
+            <h6 class="fw-bold">₹ 145.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Chocolate Toast -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Chocolate_Toast.jpg" alt="Chocolate Toast">
+          <div class="ms-3">
+            <h5 class="mb-1">Chocolate Toast</h5>
+            <small class="text-muted">170g · 320 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Sweet toast drizzled with warm chocolate sauce and choco chips.</p>
+            <h6 class="fw-bold">₹ 150.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Maggi Section -->
+<div class="food-section" data-category="Maggi">
+  <div class="row g-4">
+
+    <!-- 1. Masala Maggi -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Masala_Maggi.jpg" alt="Masala Maggi">
+          <div class="ms-3">
+            <h5 class="mb-1">Masala Maggi</h5>
+            <small class="text-muted">180g · 250 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Classic Maggi with Indian masala twist and butter.</p>
+            <h6 class="fw-bold">₹ 90.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Cheese Maggi -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Cheese_Maggi.jpg" alt="Cheese Maggi">
+          <div class="ms-3">
+            <h5 class="mb-1">Cheese Maggi</h5>
+            <small class="text-muted">190g · 280 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Maggi loaded with melting cheese and herbs.</p>
+            <h6 class="fw-bold">₹ 110.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Veggie Maggi -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Veggie_Maggi.jpg" alt="Veggie Maggi">
+          <div class="ms-3">
+            <h5 class="mb-1">Veggie Maggi</h5>
+            <small class="text-muted">200g · 270 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Maggi cooked with carrots, capsicum, and onion.</p>
+            <h6 class="fw-bold">₹ 100.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Tandoori Maggi -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Tandoori_Maggi.jpg" alt="Tandoori Maggi">
+          <div class="ms-3">
+            <h5 class="mb-1">Tandoori Maggi</h5>
+            <small class="text-muted">200g · 300 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Smoky tandoori-flavored maggi with herbs and butter.</p>
+            <h6 class="fw-bold">₹ 120.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Corn & Cheese Maggi -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Corn_Cheese_Maggi.jpg" alt="Corn Cheese Maggi">
+          <div class="ms-3">
+            <h5 class="mb-1">Corn Cheese Maggi</h5>
+            <small class="text-muted">210g · 320 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Creamy cheese Maggi with sweet corn & spices.</p>
+            <h6 class="fw-bold">₹ 125.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Butter Maggi -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Butter_Maggi.jpg" alt="Butter Maggi">
+          <div class="ms-3">
+            <h5 class="mb-1">Butter Maggi</h5>
+            <small class="text-muted">190g · 260 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Classic Maggi cooked with extra butter and love.</p>
+            <h6 class="fw-bold">₹ 95.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Savory Stacks Section -->
+<div class="food-section" data-category="Savory Stacks">
+  <div class="row g-4">
+
+    <!-- 1. Veg Pizza Slice -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Veg_Pizza_Slice.jpg" alt="Veg Pizza Slice">
+          <div class="ms-3">
+            <h5 class="mb-1">Veg Pizza Slice</h5>
+            <small class="text-muted">200g · 320 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Cheesy slice topped with tomato, capsicum & onion.</p>
+            <h6 class="fw-bold">₹ 135.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Paneer Puff Roll -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Paneer_Puff_Roll.jpg" alt="Paneer Puff Roll">
+          <div class="ms-3">
+            <h5 class="mb-1">Paneer Puff Roll</h5>
+            <small class="text-muted">180g · 290 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Flaky roll stuffed with spicy paneer bhurji.</p>
+            <h6 class="fw-bold">₹ 120.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Masala Khari -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Masala_Khari.jpg" alt="Masala Khari">
+          <div class="ms-3">
+            <h5 class="mb-1">Masala Khari</h5>
+            <small class="text-muted">160g · 270 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Crispy puff khari layered with Indian masala mix.</p>
+            <h6 class="fw-bold">₹ 80.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Corn & Cheese Puff -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Corn_Cheese_Puff.jpg" alt="Corn & Cheese Puff">
+          <div class="ms-3">
+            <h5 class="mb-1">Corn & Cheese Puff</h5>
+            <small class="text-muted">190g · 310 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Delicious puff with creamy corn & melting cheese.</p>
+            <h6 class="fw-bold">₹ 115.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Veg Puff -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Veg_Puff.jpg" alt="Veg Puff">
+          <div class="ms-3">
+            <h5 class="mb-1">Veg Puff</h5>
+            <small class="text-muted">170g · 300 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Traditional puff stuffed with spicy mixed veggies.</p>
+            <h6 class="fw-bold">₹ 95.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Cheese Burst Bites -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Cheese_Burst_Bites.jpg" alt="Cheese Burst Bites">
+          <div class="ms-3">
+            <h5 class="mb-1">Cheese Burst Bites</h5>
+            <small class="text-muted">160g · 330 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Mini bites with explosive cheesy flavor in every bite.</p>
+            <h6 class="fw-bold">₹ 130.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Peri Peri Fries Section -->
+<div class="food-section" data-category="Peri Peri Fries">
+  <div class="row g-4">
+
+    <!-- 1. Classic Fries -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Classic_Fries.jpg" alt="Classic Fries">
+          <div class="ms-3">
+            <h5 class="mb-1">Classic Fries</h5>
+            <small class="text-muted">180g · 290 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Golden crispy fries with light salt seasoning.</p>
+            <h6 class="fw-bold">₹ 90.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Peri Peri Fries -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Peri_Peri_Fries.jpg" alt="Peri Peri Fries">
+          <div class="ms-3">
+            <h5 class="mb-1">Peri Peri Fries</h5>
+            <small class="text-muted">190g · 310 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Fries tossed in spicy peri peri masala mix.</p>
+            <h6 class="fw-bold">₹ 110.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Cheese Loaded Fries -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Cheese_Loaded_Fries.jpg" alt="Cheese Loaded Fries">
+          <div class="ms-3">
+            <h5 class="mb-1">Cheese Loaded Fries</h5>
+            <small class="text-muted">210g · 340 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Fries topped with hot creamy cheese and herbs.</p>
+            <h6 class="fw-bold">₹ 130.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Chilli Garlic Fries -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Chilli_Garlic_Fries.jpg" alt="Chilli Garlic Fries">
+          <div class="ms-3">
+            <h5 class="mb-1">Chilli Garlic Fries</h5>
+            <small class="text-muted">200g · 330 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Fries sautéed in garlic sauce with red chili flakes.</p>
+            <h6 class="fw-bold">₹ 125.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Masala Fries -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Masala_Fries.jpg" alt="Masala Fries">
+          <div class="ms-3">
+            <h5 class="mb-1">Masala Fries</h5>
+            <small class="text-muted">180g · 280 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Fries mixed with tangy chat masala & mint powder.</p>
+            <h6 class="fw-bold">₹ 100.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Tandoori Mayo Fries -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Tandoori_Mayo_Fries.jpg" alt="Tandoori Mayo Fries">
+          <div class="ms-3">
+            <h5 class="mb-1">Tandoori Mayo Fries</h5>
+            <small class="text-muted">210g · 360 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Fries topped with spicy tandoori mayo and veggies.</p>
+            <h6 class="fw-bold">₹ 140.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Sweet Section -->
+<div class="food-section" data-category="sweet">
+  <div class="row g-4">
+
+    <!-- 1. Chocolate Brownie -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Chocolate_Brownie.jpg" alt="Chocolate Brownie">
+          <div class="ms-3">
+            <h5 class="mb-1">Chocolate Brownie</h5>
+            <small class="text-muted">150g · 390 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Rich fudgy brownie loaded with dark chocolate.</p>
+            <h6 class="fw-bold">₹ 120.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Red Velvet Pastry -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Red_Velvet_Pastry.jpg" alt="Red Velvet Pastry">
+          <div class="ms-3">
+            <h5 class="mb-1">Red Velvet Pastry</h5>
+            <small class="text-muted">180g · 350 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Soft velvety cake layered with creamy cheese frosting.</p>
+            <h6 class="fw-bold">₹ 140.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Chocolate Muffin -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Chocolate_Muffin.jpg" alt="Chocolate Muffin">
+          <div class="ms-3">
+            <h5 class="mb-1">Chocolate Muffin</h5>
+            <small class="text-muted">160g · 320 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Moist muffin filled with gooey chocolate center.</p>
+            <h6 class="fw-bold">₹ 110.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Choco Lava Cake -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Choco_Lava_Cake.jpg" alt="Choco Lava Cake">
+          <div class="ms-3">
+            <h5 class="mb-1">Choco Lava Cake</h5>
+            <small class="text-muted">140g · 360 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Hot lava cake with a gooey chocolate center.</p>
+            <h6 class="fw-bold">₹ 130.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Strawberry Cheesecake -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Strawberry_Cheesecake.jpg" alt="Strawberry Cheesecake">
+          <div class="ms-3">
+            <h5 class="mb-1">Strawberry Cheesecake</h5>
+            <small class="text-muted">200g · 370 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Creamy cheesecake topped with fresh strawberry glaze.</p>
+            <h6 class="fw-bold">₹ 150.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Oreo Mousse Cup -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <img src="Oreo_Mousse.jpg" alt="Oreo Mousse Cup">
+          <div class="ms-3">
+            <h5 class="mb-1">Oreo Mousse Cup</h5>
+            <small class="text-muted">180g · 340 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Smooth chocolate mousse with layers of crushed Oreo.</p>
+            <h6 class="fw-bold">₹ 135.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  
+
+
+<!-- Add Item Modal -->
+<div class="modal fade" id="addItemModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Order</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modalImage" src="" class="img-fluid mb-3" style="max-width: 200px;">
+        <p id="modalDesc">Item description goes here.</p>
+        <h6 class="fw-bold">₹ <span id="modalPrice">0.00</span></h6>
+        <div class="d-flex justify-content-center align-items-center my-3">
+          <button class="btn btn-outline-secondary btn-sm me-2" onclick="changeQuantity(-1)">-</button>
+          <span id="quantity" class="mx-3">1</span>
+          <button class="btn btn-outline-secondary btn-sm ms-2" onclick="changeQuantity(1)">+</button>
+        </div>
+        <button class="btn btn-success w-100" onclick="placeOrder()">Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Order Success Modal -->
+<div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <div class="modal-body">
+        <h1 class="text-success display-5">✅</h1>
+        <h5 class="fw-bold mt-3">Order Successful!</h5>
+        <p class="text-muted">"Your item has been ordered."🎉</p>
+        <button class="btn btn-outline-success mt-3" data-bs-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<!-- Footer Start -->
+<footer style="background-color: #fff; padding: 30px 0 20px; border-top: 1px solid #ccc; width: 100%;">
+  <div class="px-3 px-md-5"> <!-- Use padding instead of .container -->
+    <div class="row text-center justify-content-center">
+
+      <!-- Email -->
+      <div class="col-6 col-md-3 mb-3">
+        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+          <i class="fas fa-envelope text-white" style="line-height: 45px; font-size: 16px;"></i>
+        </div>
+        <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Email</h6>
+        <p style="font-size: 13px;" class="text-muted mb-0">Shaikhanas@Gmail.Com</p>
+        <p style="font-size: 13px;" class="text-muted">Anasbhai@Gmail.Com</p>
+      </div>
+
+      <!-- Opening Hours -->
+      <div class="col-6 col-md-3 mb-3">
+        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+          <i class="fas fa-clock text-white" style="line-height: 45px; font-size: 16px;"></i>
+        </div>
+        <h6 class="mt-2 mb-1" style="font-size: 16px;">Opening Hours</h6>
+        <p style="font-size: 13px;" class="text-muted">07:00am To 09:00pm</p>
+      </div>
+
+      <!-- Location -->
+      <div class="col-6 col-md-3 mb-3">
+        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+          <i class="fas fa-map-marker-alt text-white" style="line-height: 45px; font-size: 16px;"></i>
+        </div>
+        <h6 class="mt-2 mb-1" style="font-size: 16px;">Shop Location</h6>
+        <p style="font-size: 13px;" class="text-muted">Mumbai, India - 400104</p>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-6 col-md-3 mb-3">
+        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+          <i class="fas fa-phone text-white" style="line-height: 45px; font-size: 16px;"></i>
+        </div>
+        <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Number</h6>
+        <p style="font-size: 13px;" class="text-muted mb-0">+123-456-7890</p>
+        <p style="font-size: 13px;" class="text-muted">+111-222-3333</p>
+      </div>
+
+    </div>
+
+    <hr style="margin: 10px 0;">
+
+    <p class="text-center text-muted mb-0" style="font-size: 14px;">
+      © Copyright @ 2025 By <span style="color: #c4a484; font-weight: 600;">Maitri</span> | All Rights Reserved!
+    </p>
+  </div>
+</footer>
+<!-- Footer End -->
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let quantity = 1;
+
+  function changeQuantity(change) {
+    quantity += change;
+    if (quantity < 1) quantity = 1;
+    document.getElementById("quantity").textContent = quantity;
+  }
+
+  function bindAddItemButtons() {
+    const buttons = document.querySelectorAll(".btn-add");
+    buttons.forEach(button => {
+      button.onclick = function () {
+        const card = this.closest(".card");
+        const img = card.querySelector("img").getAttribute("src");
+        const title = card.querySelector("h5").textContent;
+        const price = card.querySelector("h6").textContent.replace("₹ ", "");
+        const desc = card.querySelector("p").textContent;
+
+        document.getElementById("modalImage").src = img;
+        document.getElementById("modalTitle").textContent = title;
+        document.getElementById("modalPrice").textContent = price;
+        document.getElementById("modalDesc").textContent = desc;
+        quantity = 1;
+        document.getElementById("quantity").textContent = quantity;
+
+        const addItemModal = new bootstrap.Modal(document.getElementById('addItemModal'));
+        addItemModal.show();
+      };
+    });
+  }
+
+  function placeOrder() {
+    const item = document.getElementById("modalTitle").textContent;
+    const price = document.getElementById("modalPrice").textContent;
+    const qty = document.getElementById("quantity").textContent;
+
+    // Simulate success
+    const addItemModalEl = document.getElementById('addItemModal');
+    const addItemModal = bootstrap.Modal.getInstance(addItemModalEl);
+    addItemModal.hide();
+
+    const successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
+    setTimeout(() => {
+      successModal.show();
+    }, 500);
+  }
+
+  function showDrinks(category) {
+    const sections = document.querySelectorAll('.food-section');
+    sections.forEach(section => {
+      section.style.display = 'none';
+    });
+
+    const activeSection = document.querySelector(`.food-section[data-category="${category}"]`);
+    if (activeSection) {
+      activeSection.style.display = 'block';
+    }
+
+    bindAddItemButtons(); // re-bind new buttons
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showDrinks('Sandwich');
+    bindAddItemButtons(); // initial bind
+  });
+
+  
+</script>
+
+
 </body>
 </html>
-
-
-
-

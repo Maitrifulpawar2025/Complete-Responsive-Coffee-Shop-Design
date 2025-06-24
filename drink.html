@@ -36,11 +36,6 @@
       cursor: pointer;
     }
     
-    body {
-      background: #fafafa;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
     .navbar-nav .nav-link {
       font-weight: 500;
       color: #444;
@@ -91,21 +86,6 @@
       }
     }
 
-    .card {
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: all 0.3s ease-in-out;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 50%;
-      cursor: pointer;
-    }
     .btn-add {
       background-color: #00754a;
       color:white;
@@ -114,11 +94,11 @@
     }
 
     .btn-add:hover {
-  background-color: #e0e0e0;
-  color: #444;
-}
+      background-color: #e0e0e0;
+      color: #444;
+    }
 
-   .filter-bar {
+    .filter-bar {
       overflow-x: auto;
       white-space: nowrap;
       padding: 10px 0;
@@ -134,15 +114,21 @@
       cursor: pointer;
     }
     
-      .drink-section.active {
-        display: block;
-      }
+    .drink-section {
+      display: none;
+    }
+
+    .drink-section.active {
+      display: block;
+    }
       
-      html {
+    html {
       scroll-behavior: smooth;
     }
-  </style>
-
+    .filter-btn.active {
+      background-color: #00754a;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -157,12 +143,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="order.html">Bestseller</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#drink-section">Drink</a></li>
+          <li class="nav-item"><a class="nav-link" href="#drink-section">Drink</a></li>
           <li class="nav-item"><a class="nav-link" href="food.html">Food</a></li>
+          <li class="nav-item"><a class="nav-link" href="order_history.html">Order History</a></li>
         </ul>
       </div>
     </div>
   </nav>
+
 
   <!-- Home Section (Hero Image with Text) -->
   <div class="home-bg">
@@ -172,7 +160,7 @@
     </div>
   </div>
 
-<!-- Filter Buttons -->
+ <!-- Filter Buttons -->
 <div class="container scrollbar" id="drink-section">
   <div class="filter-bar d-flex align-items-center flex-wrap">
     <button class="filter-btn" onclick="showDrinks('hot')">Hot</button>
@@ -206,7 +194,7 @@
         </div>
       </div>
 
-         <div class="col-md-4">
+      <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
             <img src="Honey Oat Flat White.jpg" alt="Java Chip">
@@ -221,7 +209,7 @@
         </div>
       </div>
 
-         <div class="col-md-4">
+      <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
             <img src="Blonde Almond Latte.avif" alt="Java Chip">
@@ -236,7 +224,7 @@
         </div>
       </div>
 
-         <div class="col-md-4">
+      <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
             <img src="Caramel_Macchiato-removebg-preview.png" alt="Java Chip">
@@ -251,7 +239,7 @@
         </div>
       </div>
 
-         <div class="col-md-4">
+      <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
             <img src="Chocolate_Cappuccino-removebg-preview.png" alt="Java Chip">
@@ -281,7 +269,7 @@
         </div>
       </div>
 
-               <div class="col-md-4">
+      <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
             <img src="Flat White.jpg" alt="Java Chip">
@@ -296,7 +284,7 @@
         </div>
       </div>
 
-         <div class="col-md-4">
+      <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
             <img src="Classic Hot Coffee.jpg" alt="Java Chip">
@@ -598,7 +586,7 @@
 
       <!-- Add more milkshake drinks -->
 
-    </div>
+    
   </div>
 </div>
 
@@ -680,10 +668,11 @@
           </div>
         </div>
       </div>
-
+  </div>
+</div>
       
 
-      <!-- juice -->
+<!-- juice -->
 
 <div class="drink-section" data-category="juice">
     <div class="row g-4">
@@ -776,9 +765,7 @@
             </div>
           </div>
         </div>
-      </div>
-
-      </div>
+      </div>      
 </div>
 </div>
 
@@ -823,6 +810,32 @@
 <!-- Bootstrap JS + Script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+  // Show only the selected drink section, hide others
+  function showDrinks(category) {
+    // Highlight the active filter button
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      if (btn.getAttribute('onclick').includes(category)) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    document.querySelectorAll('.drink-section').forEach(section => {
+      section.style.display = 'none';
+      section.classList.remove('active');
+    });
+    const activeSection = document.querySelector(`.drink-section[data-category="${category}"]`);
+    if (activeSection) {
+      activeSection.style.display = 'block';
+      activeSection.classList.add('active');
+    }
+  }
+
+  // Show 'hot' drinks by default on page load
+  document.addEventListener("DOMContentLoaded", function() {
+    showDrinks('hot');
+  });
+
   let quantity = 1;
 
   function changeQuantity(change) {
@@ -879,7 +892,5 @@
     });
   }
 </script>
-
-
 </body>
 </html>

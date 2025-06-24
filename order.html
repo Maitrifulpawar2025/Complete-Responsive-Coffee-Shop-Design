@@ -36,11 +36,7 @@
       cursor: pointer;
     }
     
-    body {
-      background: #fafafa;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
+  
     .navbar-nav .nav-link {
       font-weight: 500;
       color: #444;
@@ -134,16 +130,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Bestseller</a></li>
-          <li class="nav-item"><a href="drink.html#drink-section">Drink</a></li>
+          <li class="nav-item"><a class="nav-link active" href="order.html#product-section">Bestseller</a></li>
+          <li class="nav-item"><a class="nav-link" href="drink.html#drink-section">Drink</a></li>
           <li class="nav-item"><a class="nav-link" href="food.html">Food</a></li>
           <li class="nav-item"><a class="nav-link" href="order_history.html">Order History</a></li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <!-- Home Section -->
+<!-- Home Section -->
   <div class="home-bg">
     <div class="home-content">
       <h3>Coffee Heaven</h3>
@@ -151,97 +146,90 @@
     </div>
   </div>
 
-  
-  <!-- Main Section -->
-  <div class="container py-5">
+ <!-- Main Section -->
+  <div class="container py-5" id="product-section">
     <h2 class="fw-bold mb-2">Bestseller</h2>
     <p class="text-muted mb-4">Everyone's favorite Starbucks put together in a specially curated collection.</p>
-<!-- Container -->
-<div class="container mt-5">
-  <div class="row g-4">
-    
-    <!-- java chip -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Java Chip Frappuccino.jpg" alt="Java Chip">
-          <div class="ms-3">
-            <h5 class="mb-1">Java Chip Frappuccino</h5>
-            <small class="text-muted">TALL(354 ml) · 392 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Mocha sauce and Frappuccino® chips blended...</p>
-            <h6 class="fw-bold">₹ 441.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
+    <div class="container mt-5">
+      <div class="row g-4">
+        <!-- java chip -->
+        <div class="col-md-4">
+          <div class="card p-3">
+            <div class="d-flex align-items-center">
+              <img src="Java Chip Frappuccino.jpg" alt="Java Chip">
+              <div class="ms-3">
+                <h5 class="mb-1">Java Chip Frappuccino</h5>
+                <small class="text-muted">TALL(354 ml) · 392 kcal</small>
+                <p class="mb-1 mt-1 text-muted small">Mocha sauce and Frappuccino® chips blended...</p>
+                <h6 class="fw-bold">₹ 441.00</h6>
+                <button class="btn btn-sm btn-add">Add Item</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  Double Chocolate Chip -->
+        <div class="col-md-4">
+          <div class="card p-3">
+            <div class="d-flex align-items-center">
+              <img src="Double Chocolate Chip Frappuccino.jpg" alt=" Double Chocolate Chip">
+              <div class="ms-3">
+                <h5 class="mb-1">Caramel Macchiato</h5>
+                <small class="text-muted">TALL(354 ml) · 250 kcal</small>
+                <p class="mb-1 mt-1 text-muted small">Freshly steamed milk with vanilla-flavored syrup...</p>
+                <h6 class="fw-bold">₹ 380.00</h6>
+                <button class="btn btn-sm btn-add">Add Item</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Picco Cappuccino -->
+        <div class="col-md-4">
+          <div class="card p-3">
+            <div class="d-flex align-items-center">
+              <img src="Picco Cappuccino.jpg" alt="Picco Cappuccino">
+              <div class="ms-3">
+                <h5 class="mb-1">Picco Cappuccino</h5>
+                <small class="text-muted">TALL(354 ml) · 300 kcal</small>
+                <p class="mb-1 mt-1 text-muted small">Espresso with bittersweet mocha sauce and milk...</p>
+                <h6 class="fw-bold">₹ 410.00</h6>
+                <button class="btn btn-sm btn-add">Add Item</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Caffe Americano -->
+        <div class="col-md-4">
+          <div class="card p-3">
+            <div class="d-flex align-items-center">
+              <img src="Caffe Americano.webp" alt="Caffe Americano">
+              <div class="ms-3">
+                <h5 class="mb-1">Caffe Americano</h5>
+                <small class="text-muted">TALL(354 ml) · 5 kcal</small>
+                <p class="mb-1 mt-1 text-muted small">Slow-steeped coffee, smooth and refreshing...</p>
+                <h6 class="fw-bold">₹ 299.00</h6>
+                <button class="btn btn-sm btn-add">Add Item</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Cold Coffee  -->
+        <div class="col-md-4">
+          <div class="card p-3">
+            <div class="d-flex align-items-center">
+              <img src="Cold coffee.jpg" alt=" Cold Coffee ">
+              <div class="ms-3">
+                <h5 class="mb-1">Cold Coffee</h5>
+                <small class="text-muted">TALL(354 ml) · 220 kcal</small>
+                <p class="mb-1 mt-1 text-muted small">Smooth ristretto shots of espresso with steamed milk...</p>
+                <h6 class="fw-bold">₹ 360.00</h6>
+                <button class="btn btn-sm btn-add">Add Item</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!--  Double Chocolate Chip -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Double Chocolate Chip Frappuccino.jpg" alt=" Double Chocolate Chip">
-          <div class="ms-3">
-            <h5 class="mb-1">Caramel Macchiato</h5>
-            <small class="text-muted">TALL(354 ml) · 250 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Freshly steamed milk with vanilla-flavored syrup...</p>
-            <h6 class="fw-bold">₹ 380.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Picco Cappuccino -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Picco Cappuccino.jpg" alt="Picco Cappuccino">
-          <div class="ms-3">
-            <h5 class="mb-1">Picco Cappuccino</h5>
-            <small class="text-muted">TALL(354 ml) · 300 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Espresso with bittersweet mocha sauce and milk...</p>
-            <h6 class="fw-bold">₹ 410.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Caffe Americano -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Caffe Americano.webp" alt="Caffe Americano">
-          <div class="ms-3">
-            <h5 class="mb-1">Caffe Americano</h5>
-            <small class="text-muted">TALL(354 ml) · 5 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Slow-steeped coffee, smooth and refreshing...</p>
-            <h6 class="fw-bold">₹ 299.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cold Coffee  -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Cold coffee.jpg" alt=" Cold Coffee ">
-          <div class="ms-3">
-            <h5 class="mb-1">Cold Coffee</h5>
-            <small class="text-muted">TALL(354 ml) · 220 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Smooth ristretto shots of espresso with steamed milk...</p>
-            <h6 class="fw-bold">₹ 360.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
-</div>
 
 
 <!-- Add Item Modal -->
@@ -400,5 +388,13 @@
 
   
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if(window.location.hash && document.querySelector(window.location.hash)) {
+    document.querySelector(window.location.hash).scrollIntoView({behavior: "smooth"});
+  }
+});
+</script>
+
 </body>
 </html>

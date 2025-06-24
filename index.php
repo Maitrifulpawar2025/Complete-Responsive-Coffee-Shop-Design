@@ -6,6 +6,15 @@ $host = 'localhost';
 $port = '3308';
 $dsn = "mysql:host=$host;port=$port;dbname=$db_name";
 
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    // Not logged in, redirect or block access
+    header('Location: login.php');
+    exit;
+}
+// Use $_SESSION['user_id'] for queries!
+
 try {
     $conn = new PDO($dsn, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -54,6 +63,10 @@ if (isset($_POST['login'])) {
     $check_user->execute([$username, $password]);
 
     if ($check_user->rowCount() > 0) {
+        $user = $check_user->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['user_id'] = $user['id'];          // <<-- Set user_id in session!
+        $_SESSION['username'] = $user['username'];   // (optional) Set username in session
+
         echo "<script>alert('Login Successful!'); window.location.href='index.html';</script>";
     } else {
         echo "<script>alert('Invalid Username or Password');</script>";
