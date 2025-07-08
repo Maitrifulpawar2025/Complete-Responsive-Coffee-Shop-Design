@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 // Connect to your database
-$conn = new mysqli('localhost', 'root', 'root', 'coffee_db');
+$conn = new mysqli('localhost', 'root', 'root', 'coffee_db', 3308);
 if ($conn->connect_error) {
     http_response_code(500);
     echo json_encode(['error' => 'Database connection error']);

@@ -26,6 +26,15 @@ $result = $stmt->get_result();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+<!-- home section starts -->
+  <div class="home-bg">
+    <section class="home" id="home">
+      
+    </section>
+  </div>
+  <!-- home section ends -->
+   
 <div class="container mt-5">
     <h2>Your Order History</h2>
     <?php if ($result->num_rows > 0): ?>

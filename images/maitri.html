@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coffee Heaven - Customer Reviews</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff6fa;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .review-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .review-section h2 {
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .review-section h2 span {
+      color: #ff5d8f;
+    }
+
+    .review-box {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      padding: 30px 25px;
+      text-align: left;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .review-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .stars {
+      color: #f1c40f; /* ⭐ Yellow Stars */
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .coffee-tag {
+      font-size: 14px;
+      font-weight: 600;
+      color: #be9c79;
+      margin-bottom: 15px;
+    }
+
+    .review-text {
+      font-size: 16px;
+      color: #555;
+      flex-grow: 1;
+    }
+
+    .customer-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .customer-info img {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .customer-info h5 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .customer-info small {
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="review-section">
+    <h2>Customer's <span>Review</span></h2>
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <!-- Review 1 -->
+        <div class="col-md-4 d-flex">
+          <div class="review-box h-100 w-100">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="coffee-tag">from Coffee Heaven</div>
+              <div class="review-text">
+                "The Cappuccino At Coffee Heaven Is A Dream! The Aroma, The Froth, The Flavor — Everything Was On Point. Definitely My New Go-To Spot For Morning Coffee!" ☕
+              </div>
+            </div>
+            <div class="customer-info">
+              <img src="https://i.pravatar.cc/100?img=12" alt="James">
+              <div>
+                <h5>James</h5>
+                <small>Happy Customer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="col-md-4 d-flex">
+          <div class="review-box h-100 w-100">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="coffee-tag">from Coffee Heaven</div>
+              <div class="review-text">
+                "I Tried Their Hazelnut Latte And I Was Blown Away. So Smooth And Delicious! The Cozy Ambience Just Makes The Whole Experience Even Better!" 🌰
+              </div>
+            </div>
+            <div class="customer-info">
+              <img src="https://i.pravatar.cc/100?img=32" alt="Kingston">
+              <div>
+                <h5>Kingston</h5>
+                <small>Happy Customer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="col-md-4 d-flex">
+          <div class="review-box h-100 w-100">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="coffee-tag">from Coffee Heaven</div>
+              <div class="review-text">
+                "Absolutely Loved The Iced Caramel Macchiato! It Was Refreshing, Beautifully Balanced, And Served With A Smile. Thank You Coffee Heaven!" 🧋
+              </div>
+            </div>
+            <div class="customer-info">
+              <img src="https://i.pravatar.cc/100?img=47" alt="Zara">
+              <div>
+                <h5>Zara</h5>
+                <small>Happy Customer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coffee Order</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
   <style>
     body {
       background: #fafafa;
@@ -86,18 +88,6 @@
       }
     }
 
-    .btn-add {
-      background-color: #00754a;
-      color:white;
-      font-weight: 500;
-      border-radius: 20px;
-    }
-
-    .btn-add:hover {
-      background-color: #e0e0e0;
-      color: #444;
-    }
-
     .filter-bar {
       overflow-x: auto;
       white-space: nowrap;
@@ -125,14 +115,35 @@
     html {
       scroll-behavior: smooth;
     }
+    
+    .filter-btn:hover {
+      background-color: #d4edda; /* light green */
+      color: #155724; /* dark green text */
+    }
+
     .filter-btn.active {
       background-color: #00754a;
       color: #fff;
     }
+    /* Full-width footer styles */
+    footer {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      background-color: #fff;
+      padding: 30px 0 20px;
+      border-top: 1px solid #ccc;
+    }
+    @media (max-width: 576px) {
+      footer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
   </style>
 </head>
 <body>
-    <!-- navbar -->
+
+   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
     <a href="#home" class="logo"><img src="images/logo.png" alt="" width="50px" height="50px"></a>
     <div class="container">
@@ -142,21 +153,23 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="order.html">Bestseller</a></li>
-          <li class="nav-item"><a class="nav-link" href="#drink-section">Drink</a></li>
-          <li class="nav-item"><a class="nav-link" href="food.html">Food</a></li>
-          <li class="nav-item"><a class="nav-link" href="order_history.html">Order History</a></li>
+          <li class="nav-item"><a class="nav-link " href="index.php"><b>Home</b></a></li>
+          <li class="nav-item"><a class="nav-link " href="order.html#product-section"><b>Bestseller</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="drink.html#drink-section"><b>Drink</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="food.html#food-section"><b>Food</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="order_history.html"><b>Order History</b></a></li>
+
         </ul>
       </div>
     </div>
   </nav>
 
-
   <!-- Home Section (Hero Image with Text) -->
   <div class="home-bg">
     <div class="home-content">
       <h3>Coffee Heaven</h3>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut officia, accusantium mollitia laudantium dolorum dolore.</p>
+      <p>At Coffee Heaven, you're not just a customer. You're family.  
+        Come. Sip. Smile. Let your coffee story begin…</p>
     </div>
   </div>
 
@@ -175,8 +188,9 @@
     
 <!-- Container -->
 <div class="container mt-5">
-  <!-- HOT Section -->
-  <div class="drink-section" data-category="hot">
+  <!-- ... your drink sections here ... -->
+  <!-- (PASTE your drink sections here, unchanged, as in your code above) -->
+   <div class="drink-section" data-category="hot">
     <div class="row g-4">
       <!-- Java Chip -->
       <div class="col-md-4">
@@ -290,7 +304,7 @@
             <img src="Classic Hot Coffee.jpg" alt="Java Chip">
             <div class="ms-3">
               <h5 class="mb-1">Classic Hot Coffee</h5>
-              <small class="text-muted">Classic Hot Coffee((180 ml) - 105 kcal) .105 kcal</small>
+              <small class="text-muted">SHORT(180 ml).105 kcal</small>
               <p class="mb-1 mt-1 text-muted small">Savour our premium coffee made with top 3% Arabica beans in ..</p>
               <h6 class="fw-bold">₹ 441.00</h6>
               <button class="btn btn-sm btn-add">Add Item</button>
@@ -431,7 +445,7 @@
           <div class="d-flex align-items-center">
             <img src="Classic Frappe Cold Coffee.webp" alt="Cold Coffee">
             <div class="ms-3">
-              <h5 class="mb-1">Classic Frappe Cold Coffee</h5>
+              <h5 class="mb-1">Frappe Cold Coffee</h5>
               <small class="text-muted">TALL(354 ml) · 220 kcal</small>
               <p class="mb-1 mt-1 text-muted small">Smooth ristretto shots of espresso...</p>
               <h6 class="fw-bold">₹ 360.00</h6>
@@ -516,7 +530,7 @@
             <div class="ms-3">
               <h5 class="mb-1">Rainbow Milkshake</h5>
               <small class="text-muted">TALL(354 ml) · 250 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Colorful layers, sweet and creamy.</p>
+              <p class="mb-1 mt-1 text-muted small">Colorful layers, sweet and creamy,Fruit.</p>
               <h6 class="fw-bold">₹ 399.00</h6>
               <button class="btn btn-sm btn-add">Add Item</button>
             </div>
@@ -661,7 +675,7 @@
             <div class="ms-3">
               <h5 class="mb-1">Instant Black Coffee</h5>
               <small class="text-muted">TALL(354 ml) · 250 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Quick mix coffee – light and basic.</p>
+              <p class="mb-1 mt-1 text-muted small">Quick mix coffee – light and basic Black Coffee</p>
               <h6 class="fw-bold">₹ 399.00</h6>
               <button class="btn btn-sm btn-add">Add Item</button>
             </div>
@@ -679,95 +693,140 @@
       <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
-            <img src="Double Chocolate Chip Frappuccino.jpg" alt="Milkshake">
-            <div class="ms-3">
-              <h5 class="mb-1">Java Chip Frappuccino</h5>
-              <small class="text-muted">TALL(354 ml) · 250 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Blended coffee with chocolate chips & cream.</p>
-              <h6 class="fw-bold">₹ 399.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
+             <img src="Fresh Orange Juice.jpg" alt="Fresh Orange Juice">
+          <div class="ms-3">
+            <h5 class="mb-1">Fresh Orange Juice</h5>
+            <small class="text-muted">250ml · 110 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">100% pure orange juice with no added sugar.</p>
+            <h6 class="fw-bold">₹ 90.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
           </div>
         </div>
       </div>
+    </div>
 
        <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
-            <img src="Double Chocolate Chip Frappuccino.jpg" alt="Milkshake">
-            <div class="ms-3">
-              <h5 class="mb-1">Mocha Frappe</h5>
-              <small class="text-muted">TALL(354 ml) · 250 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Bold espresso blended with cocoa & ice.</p>
-              <h6 class="fw-bold">₹ 399.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
+           <img src="Watermelon Juice.jpg" alt="Watermelon Juice">
+          <div class="ms-3">
+            <h5 class="mb-1">Watermelon Juice</h5>
+            <small class="text-muted">300ml · 95 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Refreshing juice made from chilled watermelon pulp.</p>
+            <h6 class="fw-bold">₹ 85.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
           </div>
         </div>
       </div>
-
+    </div>
 
        <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
-            <img src="Double Chocolate Chip Frappuccino.jpg" alt="Milkshake">
-            <div class="ms-3">
-              <h5 class="mb-1">Vanilla Bean Frappe</h5>
-              <small class="text-muted">TALL(354 ml) · 250 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Vanilla ice cream style creamy blend.</p>
-              <h6 class="fw-bold">₹ 399.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
+            <img src="Pineapple Juice.webp" alt="Pineapple Juice">
+          <div class="ms-3">
+            <h5 class="mb-1">Pineapple Juice</h5>
+            <small class="text-muted">250ml · 120 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Tropical pineapple juice with a sweet and tangy twist.</p>
+            <h6 class="fw-bold">₹ 95.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
           </div>
         </div>
       </div>
+    </div>
 
        <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
-            <img src="Double Chocolate Chip Frappuccino.jpg" alt="Milkshake">
-            <div class="ms-3">
-              <h5 class="mb-1">Cold Mocha Blast</h5>
-              <small class="text-muted">TALL(354 ml) · 250 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Chilled mocha mix with whipped topping.</p>
-              <h6 class="fw-bold">₹ 399.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
+             <img src="ABC Juice.webp" alt="Apple Beetroot Carrot Juice">
+          <div class="ms-3">
+            <h5 class="mb-1">ABC Juice</h5>
+            <small class="text-muted">300ml · 105 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Detox juice made with apple, beetroot, and carrot.</p>
+            <h6 class="fw-bold">₹ 100.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
           </div>
         </div>
       </div>
+    </div>
 
        <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
-            <img src="Double Chocolate Chip Frappuccino.jpg" alt="Milkshake">
-            <div class="ms-3">
-              <h5 class="mb-1">White Chocolate Mocha Frappe</h5>
-              <small class="text-muted">TALL(354 ml) · 250 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Sweet white chocolate blended icy drink.</p>
-              <h6 class="fw-bold">₹ 399.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
+           <img src="Mango Juice.jpg" alt="Mango Juice">
+          <div class="ms-3">
+            <h5 class="mb-1">Mango Juice</h5>
+            <small class="text-muted">250ml · 130 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Sweet mango juice from real alphonso pulp.</p>
+            <h6 class="fw-bold">₹ 110.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
           </div>
         </div>
       </div>
+    </div>
 
        <div class="col-md-4">
         <div class="card p-3">
           <div class="d-flex align-items-center">
-            <img src="Double Chocolate Chip Frappuccino.jpg" alt="Milkshake">
-            <div class="ms-3">
-              <h5 class="mb-1">Cookies & Cream Frappe</h5>
-              <small class="text-muted">TALL(354 ml) · 250 kcal</small>
-              <p class="mb-1 mt-1 text-muted small">Oreo-style blended shake with coffee base.</p>
-              <h6 class="fw-bold">₹ 399.00</h6>
-              <button class="btn btn-sm btn-add">Add Item</button>
-            </div>
+            <img src="glasses-with-lemonade-table.jpg" alt="Sweet Lime Juice">
+          <div class="ms-3">
+            <h5 class="mb-1">Sweet Lime Juice</h5>
+            <small class="text-muted">250ml · 90 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Mild, vitamin-rich juice of mosambi with natural flavors.</p>
+            <h6 class="fw-bold">₹ 85.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
           </div>
         </div>
-      </div>      
+      </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3">
+          <div class="d-flex align-items-center">
+             <img src="Black Plum.jpg" alt="Apple Beetroot Carrot Juice">
+          <div class="ms-3">
+             <h5 class="mb-1">Black Plum Juice</h5>
+            <small class="text-muted">250ml · 100 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Tangy and refreshing jamun juice, great for digestion & diabetes.</p>
+            <h6 class="fw-bold">₹ 110.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+       <div class="col-md-4">
+        <div class="card p-3">
+          <div class="d-flex align-items-center">
+           <img src="lychee-fruit.jpg" alt="Mango Juice">
+          <div class="ms-3">
+            <h5 class="mb-1">Lychee Juice</h5>
+            <small class="text-muted">250ml · 120 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Sweet & fragrant lychee juice with a smooth tropical taste.</p>
+            <h6 class="fw-bold">₹ 115.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+       <div class="col-md-4">
+        <div class="card p-3">
+          <div class="d-flex align-items-center">
+            <img src="kiwi juice.jpg" alt="Sweet Lime Juice">
+          <div class="ms-3">
+            <h5 class="mb-1">Kiwi Juice</h5>
+            <small class="text-muted">250ml · 115 kcal</small>
+            <p class="mb-1 mt-1 text-muted small">Zesty kiwi juice loaded with Vitamin C and refreshing tang.</p>
+            <h6 class="fw-bold">₹ 125.00</h6>
+            <button class="btn btn-sm btn-add">Add Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 </div>
+<br><br><br><br>
 
 <!-- Add Item Modal -->
 <div class="modal fade" id="addItemModal" tabindex="-1" aria-hidden="true">
@@ -806,6 +865,52 @@
   </div>
 </div>
 
+ <!-- Footer Start -->
+  <footer>
+    <div class="px-3 px-md-5">
+      <div class="row text-center justify-content-center">
+        <!-- Email -->
+        <div class="col-6 col-md-3 mb-3">
+          <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+            <i class="fas fa-envelope text-white" style="line-height: 45px; font-size: 16px;"></i>
+          </div>
+          <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Email</h6>
+          <p style="font-size: 13px;" class="text-muted mb-0">Maitrifulpawar19@gmil.com</p>
+          <p style="font-size: 13px;" class="text-muted">bitsj2024072722@bitbaroda.com</p>
+        </div>
+        <!-- Opening Hours -->
+        <div class="col-6 col-md-3 mb-3">
+          <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+            <i class="fas fa-clock text-white" style="line-height: 45px; font-size: 16px;"></i>
+          </div>
+          <h6 class="mt-2 mb-1" style="font-size: 16px;">Opening Hours</h6>
+          <p style="font-size: 13px;" class="text-muted">07:00am To 09:00pm</p>
+        </div>
+        <!-- Location -->
+        <div class="col-6 col-md-3 mb-3">
+          <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+            <i class="fas fa-map-marker-alt text-white" style="line-height: 45px; font-size: 16px;"></i>
+          </div>
+          <h6 class="mt-2 mb-1" style="font-size: 16px;">Shop Location</h6>
+          <p style="font-size: 13px;" class="text-muted">Vadodara , India - 400104</p>
+        </div>
+        <!-- Phone -->
+        <div class="col-6 col-md-3 mb-3">
+          <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+            <i class="fas fa-phone text-white" style="line-height: 45px; font-size: 16px;"></i>
+          </div>
+          <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Number</h6>
+          <p style="font-size: 13px;" class="text-muted mb-0">+123-456-7890</p>
+          <p style="font-size: 13px;" class="text-muted">+111-222-3333</p>
+        </div>
+      </div>
+      <hr style="margin: 10px 0;">
+      <p class="text-center text-muted mb-0" style="font-size: 14px;">
+        © Copyright @ 2025 By <span style="color: #c4a484; font-weight: 600;">Maitri</span> | All Rights Reserved!
+      </p>
+    </div>
+  </footer>
+  <!-- Footer End -->
 
 <!-- Bootstrap JS + Script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -836,6 +941,9 @@
     showDrinks('hot');
   });
 
+   
+
+  
   let quantity = 1;
 
   function changeQuantity(change) {

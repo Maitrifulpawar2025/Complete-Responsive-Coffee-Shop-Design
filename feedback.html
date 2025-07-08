@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feedback Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      padding-top: 70px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('images/home-bg.jpg') center/cover no-repeat;
+      filter: blur(8px);
+      z-index: -2;
+    }
+
+    .transparent-container {
+      background: rgba(44, 34, 25, 0.4);
+      border-radius: 1rem;
+      box-shadow: 0 2px 16px rgba(169, 139, 139, 0.18);
+      backdrop-filter: blur(6px);
+      padding: 2rem;
+      margin: 80px auto;
+      max-width: 850px;
+    }
+
+    .white-inner {
+      background-color: #fff;
+      border-radius: 1rem;
+      padding: 2rem;
+      color: #000;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      text-align: center;
+      color: #0f0f0f;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 2px solid #16110a;
+      background-color: rgba(244, 236, 236, 0.1);
+      color: #080808;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #242220;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      background-color: #6d4c41;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 2px 2px 6px #00000066;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color:#be9c79;
+    }
+
+    .navbar {
+      backdrop-filter: blur(10px);
+      background-color: white;
+    }
+
+    
+
+    .thank-you-message {
+      display: none;
+      background-color: #be9c79;
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      line-height: 1.6;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .star {
+      cursor: pointer;
+      transition: transform 0.2s;
+      font-size: 24px;
+      color: #060606;
+    }
+
+    .star:hover {
+      transform: scale(1.2);
+    }
+
+    .star.selected {
+      color: gold;
+    }
+
+    /* Underline on hover */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #00754a; /* Optional: Change text color on hover */
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #00754a; /* or your preferred color */
+  transition: width 0.3s;
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after {
+  width: 100%;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">CoffeeShop</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#feedback">Feedback</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Feedback Section -->
+ <!-- Feedback Section -->
+  <div class="container">
+    <div class="transparent-container" id="feedback">
+      <div class="white-inner">
+        <div class="heading"> 
+          <h3>FEEDBACK</h3>
+        </div>
+        <form id="feedbackForm">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" required>
+          <textarea id="message" name="message" placeholder="Write your feedback here..." required></textarea>
+          <input type="hidden" id="rating" name="rating" value="0" />
+
+
+          <div class="mb-3">
+            <label class="form-label">Rate Us</label><br>
+            <div id="star-rating">
+              <span class="star" data-value="1">&#9734;</span>
+              <span class="star" data-value="2">&#9734;</span>
+              <span class="star" data-value="3">&#9734;</span>
+              <span class="star" data-value="4">&#9734;</span>
+              <span class="star" data-value="5">&#9734;</span>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="submit">SEND FEEDBACK</button>
+          </div>
+        </form>
+
+        <div class="thank-you-message" id="thankYouMessage">
+          Thank you for your feedback!<br>
+          We truly appreciate your time. 🙏🏻
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+ <script>
+    // ⭐ Star rating logic
+    const stars = document.querySelectorAll('.star');
+    const ratingInput = document.getElementById('rating');
+
+    stars.forEach((star) => {
+      star.addEventListener('click', () => {
+        let value = star.getAttribute('data-value');
+        ratingInput.value = value;
+
+        stars.forEach((s, i) => {
+          if (i < value) {
+            s.classList.add('selected');
+            s.innerHTML = '&#9733;'; // filled star
+          } else {
+            s.classList.remove('selected');
+            s.innerHTML = '&#9734;'; // empty star
+          }
+        });
+      });
+    });
+
+    // 📨 Feedback form submit logic
+    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+
+      fetch("submit_feedback.php", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log("Response:", data); // 👀 Debugging message
+
+        if (data.trim() === "success") {
+          document.getElementById("thankYouMessage").style.display = "block";
+          document.getElementById("feedbackForm").reset();
+          stars.forEach((s) => {
+            s.classList.remove('selected');
+            s.innerHTML = '&#9734;';
+          });
+          setTimeout(() => {
+            document.getElementById("thankYouMessage").style.display = "none";
+          }, 5000);
+        } else {
+          alert("Something went wrong!\n" + data); // 🔥 Show PHP error response
+        }
+      })
+      .catch(error => {
+        console.error("Fetch Error:", error); // 👈 JS/network error
+        alert("Network error. Please try again.");
+      });
+    });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -46,6 +46,33 @@
       color: #00754a;
       border-bottom: 2px solid #00754a;
     }
+    
+    .navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.2s;
+}
+
+/* Underline on hover */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #00754a; /* Optional: Change text color on hover */
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #00754a; /* or your preferred color */
+  transition: width 0.3s;
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after {
+  width: 100%;
+}
 
     .home-bg {
       position: relative;
@@ -130,10 +157,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="order.html#product-section">Bestseller</a></li>
-          <li class="nav-item"><a class="nav-link" href="drink.html#drink-section">Drink</a></li>
-          <li class="nav-item"><a class="nav-link" href="food.html">Food</a></li>
-          <li class="nav-item"><a class="nav-link" href="order_history.html">Order History</a></li>
+          <li class="nav-item"><a class="nav-link " href="index.php"><b>Home</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html#product-section"><b>Bestseller</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="drink.html#drink-section"><b>Drink</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="food.html#food-section"><b>Food</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="order_history.html"><b>Order History</b></a></li>
         </ul>
       </div>
     </div>
@@ -142,7 +170,8 @@
   <div class="home-bg">
     <div class="home-content">
       <h3>Coffee Heaven</h3>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut officia, accusantium mollitia laudantium dolorum dolore.</p>
+      <p>At Coffee Heaven, you're not just a customer. You're family.  
+          Come. Sip. Smile. Let your coffee story begin…</p>
     </div>
   </div>
 
@@ -269,6 +298,7 @@
   </div>
 </div>
 <br><br>
+
 <!-- Font Awesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -283,8 +313,8 @@
           <i class="fas fa-envelope text-white" style="line-height: 45px; font-size: 16px;"></i>
         </div>
         <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Email</h6>
-        <p style="font-size: 13px;" class="text-muted mb-0">Shaikhanas@Gmail.Com</p>
-        <p style="font-size: 13px;" class="text-muted">Anasbhai@Gmail.Com</p>
+        <p style="font-size: 13px;" class="text-muted mb-0">Maitrifulpawar19@gmil.com</p>
+        <p style="font-size: 13px;" class="text-muted">bitsj2024072722@bitbaroda.com</p>
       </div>
 
       <!-- Opening Hours -->
@@ -302,7 +332,7 @@
           <i class="fas fa-map-marker-alt text-white" style="line-height: 45px; font-size: 16px;"></i>
         </div>
         <h6 class="mt-2 mb-1" style="font-size: 16px;">Shop Location</h6>
-        <p style="font-size: 13px;" class="text-muted">Mumbai, India - 400104</p>
+        <p style="font-size: 13px;" class="text-muted">Vadodara , India - 400104</p>
       </div>
 
       <!-- Phone -->

@@ -6,6 +6,7 @@
   <title>Coffee Order</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <style>
     body {
       background: #fafafa;
@@ -34,7 +35,6 @@
     }
 
     .home-content {
-      background-color: rgba(255, 255, 255, 0.75);
       padding: 40px;
       border-radius: 10px;
       max-width: 500px;
@@ -86,11 +86,11 @@
     }
 
     .btn-add:hover {
-  background-color: #e0e0e0;/* Starbucks green */
-  color: #444;
-}
+      background-color: #e0e0e0;
+      color: #444;
+    }
 
-.filter-bar {
+    .filter-bar {
       overflow-x: auto;
       white-space: nowrap;
       padding: 10px 0;
@@ -104,6 +104,31 @@
       margin: 5px;
       font-size: 14px;
       cursor: pointer;
+    }
+
+    .filter-btn:hover {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .filter-btn.active {
+      background-color: #00754a;
+      color: #fff;
+    }
+
+    /* Full-width footer styles */
+    footer {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      background-color: #fff;
+      padding: 30px 0 20px;
+      border-top: 1px solid #ccc;
+    }
+    @media (max-width: 576px) {
+      footer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
     }
   </style>
 </head>
@@ -119,10 +144,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="order.html#product-section">Bestseller</a></li>
-          <li class="nav-item"><a class="nav-link" href="drink.html#drink-section">Drink</a></li>
-          <li class="nav-item"><a class="nav-link active" href="food.html">Food</a></li>
-          <li class="nav-item"><a class="nav-link" href="order_history.html">Order History</a></li>
+          <li class="nav-item"><a class="nav-link " href="index.php"><b>Home</b></a></li>
+          <li class="nav-item"><a class="nav-link " href="order.html#product-section"><b>Bestseller</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="drink.html#drink-section"><b>Drink</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="food.html#food-section"><b>Food</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="order_history.html"><b>Order History</b></a></li>
+
         </ul>
       </div>
     </div>
@@ -132,29 +159,27 @@
   <div class="home-bg">
     <div class="home-content">
       <h3>Coffee Heaven</h3>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut officia, accusantium mollitia laudantium dolorum dolore.</p>
+      <p>At Coffee Heaven, you're not just a customer. You're family.  
+          Come. Sip. Smile. Let your coffee story begin…</p>
     </div>
   </div>
 
-<!-- Filter Buttons -->
-<div class="container scrollbar">
-  <div class="filter-bar d-flex align-items-center flex-wrap">
-    <button class="filter-btn" onclick="showDrinks('Sandwich')">Sandwich</button>
-    <button class="filter-btn" onclick="showDrinks('Wraps')">Wraps</button>
-    <button class="filter-btn" onclick="showDrinks('Puff Perfection')">Puff Perfection</button>
-    <button class="filter-btn" onclick="showDrinks('Bread & Toast')">Bread & Toast</button>
-    <button class="filter-btn" onclick="showDrinks('Maggi')">Maggi</button>
-    <button class="filter-btn" onclick="showDrinks('Savory Stacks')">Savory Stacks</button>
-    <button class="filter-btn" onclick="showDrinks('Peri Peri Fries')"> Peri Peri Fries</button>
-    <button class="filter-btn" onclick="showDrinks('sweet')">sweet</button>
+  <!-- Filter Buttons -->
+  <div class="container scrollbar" id="food-section">
+    <div class="filter-bar d-flex align-items-center flex-wrap">
+      <button class="filter-btn" onclick="showDrinks('Sandwich')">Sandwich</button>
+      <button class="filter-btn" onclick="showDrinks('Wraps')">Wraps</button>
+      <button class="filter-btn" onclick="showDrinks('Puff Perfection')">Puff Perfection</button>
+      <button class="filter-btn" onclick="showDrinks('Bread & Toast')">Bread & Toast</button>
+      <button class="filter-btn" onclick="showDrinks('Maggi')">Maggi</button>
+      <button class="filter-btn" onclick="showDrinks('Peri Peri Fries')"> Peri Peri Fries</button>
+      <button class="filter-btn" onclick="showDrinks('sweet')">sweet</button>
+    </div>
   </div>
-</div>
-  
-    
-   
-    
-<!-- Container -->
-<div class="container mt-5">
+
+  <!-- ... your food sections here (omitted for brevity, as in your original code) ... -->
+  <!-- Please copy your menu sections here exactly as above, or use your working original code. -->
+   <div class="container mt-5" id="food-section">
   <!-- HOT Section -->
   <div class="food-section" data-category="Sandwich">
     <div class="row g-4">
@@ -163,7 +188,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Paneer_Tikka_Sandwich.jpg" alt="Paneer Tikka Sandwich">
+        <img src="Paneer Tikka Sandwich.jpg" alt="Paneer Tikka Sandwich">
         <div class="ms-3">
           <h5 class="mb-1">Paneer Tikka Sandwich</h5>
           <small class="text-muted">250g · 330 kcal</small>
@@ -179,7 +204,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Cheese_Corn_Sandwich.jpg" alt="Cheese Corn Sandwich">
+        <img src="Cheese Corn Sandwich.webp" alt="Cheese Corn Sandwich">
         <div class="ms-3">
           <h5 class="mb-1">Cheese Corn Sandwich</h5>
           <small class="text-muted">200g · 280 kcal</small>
@@ -195,7 +220,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Veg_Club_Sandwich.jpg" alt="Veg Club Sandwich">
+        <img src="Veg Club Sandwich.jpg" alt="Veg Club Sandwich">
         <div class="ms-3">
           <h5 class="mb-1">Veg Club Sandwich</h5>
           <small class="text-muted">270g · 320 kcal</small>
@@ -211,7 +236,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Aloo_Masala_Sandwich.jpg" alt="Aloo Masala Sandwich">
+        <img src="Aloo Masala Sandwich.avif" alt="Aloo Masala Sandwich">
         <div class="ms-3">
           <h5 class="mb-1">Aloo Masala Sandwich</h5>
           <small class="text-muted">230g · 300 kcal</small>
@@ -227,7 +252,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Veg_Mayo_Sandwich.jpg" alt="Veg Mayo Sandwich">
+        <img src="Veg Mayo Sandwich.jpg" alt="Veg Mayo Sandwich">
         <div class="ms-3">
           <h5 class="mb-1">Veg Mayo Sandwich</h5>
           <small class="text-muted">220g · 290 kcal</small>
@@ -243,7 +268,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Grilled_Veggie_Delight.jpg" alt="Grilled Veggie Delight">
+        <img src="Grilled Veggie Delight.jpg" alt="Grilled Veggie Delight">
         <div class="ms-3">
           <h5 class="mb-1">Grilled Veggie Delight</h5>
           <small class="text-muted">240g · 310 kcal</small>
@@ -266,7 +291,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Paneer_Tikka_Wrap.jpg" alt="Paneer Tikka Wrap">
+        <img src="Paneer Tikka Wrap.jpg" alt="Paneer Tikka Wrap">
         <div class="ms-3">
           <h5 class="mb-1">Paneer Tikka Wrap</h5>
           <small class="text-muted">250g · 360 kcal</small>
@@ -282,7 +307,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Mexican_Veg_Wrap.jpg" alt="Mexican Veg Wrap">
+        <img src="Mexican Veg Wrap.jpg" alt="Mexican Veg Wrap">
         <div class="ms-3">
           <h5 class="mb-1">Mexican Veg Wrap</h5>
           <small class="text-muted">240g · 310 kcal</small>
@@ -298,7 +323,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Cheese_Garlic_Wrap.jpg" alt="Cheese Garlic Wrap">
+        <img src="Cheese Garlic Wrap.webp" alt="Cheese Garlic Wrap">
         <div class="ms-3">
           <h5 class="mb-1">Cheese Garlic Wrap</h5>
           <small class="text-muted">220g · 280 kcal</small>
@@ -314,7 +339,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Aloo_Patty_Wrap.jpg" alt="Aloo Patty Wrap">
+        <img src="Aloo Patty Wrap.jpg" alt="Aloo Patty Wrap">
         <div class="ms-3">
           <h5 class="mb-1">Aloo Patty Wrap</h5>
           <small class="text-muted">230g · 320 kcal</small>
@@ -330,7 +355,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Veggie_Delight_Wrap.jpg" alt="Veggie Delight Wrap">
+        <img src="Veggie Delight Wrap.png" alt="Veggie Delight Wrap">
         <div class="ms-3">
           <h5 class="mb-1">Veggie Delight Wrap</h5>
           <small class="text-muted">240g · 300 kcal</small>
@@ -346,11 +371,11 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Hara_Bhara_Wrap.jpg" alt="Hara Bhara Kebab Wrap">
+        <img src="Hara Bhara Kebab Wrap.jpg" alt="Hara Bhara Kebab Wrap">
         <div class="ms-3">
           <h5 class="mb-1">Hara Bhara Kebab Wrap</h5>
           <small class="text-muted">250g · 340 kcal</small>
-          <p class="mb-1 mt-1 text-muted small">Tandoori-style hara bhara kebab wrapped with green chutney & salad.</p>
+          <p class="mb-1 mt-1 text-muted small">Tandoori hara bhara kebab wrapped with green chutney & salad.</p>
           <h6 class="fw-bold">₹ 175.00</h6>
           <button class="btn btn-sm btn-add">Add Item</button>
         </div>
@@ -370,7 +395,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Veg_Masala_Puff.jpg" alt="Veg Masala Puff">
+        <img src="Veg Masala Puff.jpg" alt="Veg Masala Puff">
         <div class="ms-3">
           <h5 class="mb-1">Veg Masala Puff</h5>
           <small class="text-muted">150g · 280 kcal</small>
@@ -386,7 +411,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Paneer_Puff.jpg" alt="Paneer Puff">
+        <img src="Paneer Puff.webp" alt="Paneer Puff">
         <div class="ms-3">
           <h5 class="mb-1">Paneer Puff</h5>
           <small class="text-muted">160g · 310 kcal</small>
@@ -402,7 +427,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Cheese_Corn_Puff.jpg" alt="Cheese Corn Puff">
+        <img src="Cheese Corn Puff.jpg" alt="Cheese Corn Puff">
         <div class="ms-3">
           <h5 class="mb-1">Cheese Corn Puff</h5>
           <small class="text-muted">155g · 295 kcal</small>
@@ -418,7 +443,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Mushroom_Puff.jpg" alt="Mushroom Puff">
+        <img src="Mushroom Puff.jpg" alt="Mushroom Puff">
         <div class="ms-3">
           <h5 class="mb-1">Mushroom Puff</h5>
           <small class="text-muted">160g · 320 kcal</small>
@@ -434,7 +459,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Spicy_Veg_Puff.jpg" alt="Spicy Veg Puff">
+        <img src="Spicy Veg Puff.jpg" alt="Spicy Veg Puff">
         <div class="ms-3">
           <h5 class="mb-1">Spicy Veg Puff</h5>
           <small class="text-muted">150g · 270 kcal</small>
@@ -450,7 +475,7 @@
   <div class="col-md-4">
     <div class="card p-3">
       <div class="d-flex align-items-center">
-        <img src="Spinach_Corn_Puff.jpg" alt="Spinach Corn Puff">
+        <img src="Spinach Corn Puff.jpg" alt="Spinach Corn Puff">
         <div class="ms-3">
           <h5 class="mb-1">Spinach Corn Puff</h5>
           <small class="text-muted">155g · 300 kcal</small>
@@ -475,7 +500,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Classic_Garlic_Bread.jpg" alt="Classic Garlic Bread">
+          <img src="Garlic Bread.jpg" alt="Classic Garlic Bread">
           <div class="ms-3">
             <h5 class="mb-1">Classic Garlic Bread</h5>
             <small class="text-muted">180g · 250 kcal</small>
@@ -491,7 +516,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Cheesy_Garlic_Bread.jpg" alt="Cheesy Garlic Bread">
+          <img src="Cheesy Garlic Bread.jpg" alt="Cheesy Garlic Bread">
           <div class="ms-3">
             <h5 class="mb-1">Cheesy Garlic Bread</h5>
             <small class="text-muted">200g · 310 kcal</small>
@@ -507,7 +532,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Masala_Bun_Toast.jpg" alt="Masala Bun Toast">
+          <img src="Masala Bun Toast.jpg" alt="Masala Bun Toast">
           <div class="ms-3">
             <h5 class="mb-1">Masala Bun Toast</h5>
             <small class="text-muted">190g · 270 kcal</small>
@@ -523,7 +548,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Butter_Toast.jpg" alt="Butter Toast">
+          <img src="Butter Toast.webp" alt="Butter Toast">
           <div class="ms-3">
             <h5 class="mb-1">Butter Toast</h5>
             <small class="text-muted">160g · 220 kcal</small>
@@ -539,7 +564,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Veg_Masala_Toast.jpg" alt="Veg Masala Toast">
+          <img src="Veg Masala Toast.jpg" alt="Veg Masala Toast">
           <div class="ms-3">
             <h5 class="mb-1">Veg Masala Toast</h5>
             <small class="text-muted">200g · 300 kcal</small>
@@ -555,7 +580,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Chocolate_Toast.jpg" alt="Chocolate Toast">
+          <img src="Chocolate Toast.jpg" alt="Chocolate Toast">
           <div class="ms-3">
             <h5 class="mb-1">Chocolate Toast</h5>
             <small class="text-muted">170g · 320 kcal</small>
@@ -577,7 +602,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Masala_Maggi.jpg" alt="Masala Maggi">
+          <img src="Masala Maggi.jpg" alt="Masala Maggi">
           <div class="ms-3">
             <h5 class="mb-1">Masala Maggi</h5>
             <small class="text-muted">180g · 250 kcal</small>
@@ -593,7 +618,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Cheese_Maggi.jpg" alt="Cheese Maggi">
+          <img src="Cheese Maggi.webp" alt="Cheese Maggi">
           <div class="ms-3">
             <h5 class="mb-1">Cheese Maggi</h5>
             <small class="text-muted">190g · 280 kcal</small>
@@ -609,7 +634,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Veggie_Maggi.jpg" alt="Veggie Maggi">
+          <img src="Veggie Maggi.jpg" alt="Veggie Maggi">
           <div class="ms-3">
             <h5 class="mb-1">Veggie Maggi</h5>
             <small class="text-muted">200g · 270 kcal</small>
@@ -625,7 +650,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Tandoori_Maggi.jpg" alt="Tandoori Maggi">
+          <img src="Tandoori Maggi.jpg" alt="Tandoori Maggi">
           <div class="ms-3">
             <h5 class="mb-1">Tandoori Maggi</h5>
             <small class="text-muted">200g · 300 kcal</small>
@@ -641,7 +666,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Corn_Cheese_Maggi.jpg" alt="Corn Cheese Maggi">
+          <img src="Corn Cheese Maggi.jpg" alt="Corn Cheese Maggi">
           <div class="ms-3">
             <h5 class="mb-1">Corn Cheese Maggi</h5>
             <small class="text-muted">210g · 320 kcal</small>
@@ -657,7 +682,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Butter_Maggi.jpg" alt="Butter Maggi">
+          <img src="Butter Maggi.webp" alt="Butter Maggi">
           <div class="ms-3">
             <h5 class="mb-1">Butter Maggi</h5>
             <small class="text-muted">190g · 260 kcal</small>
@@ -672,108 +697,6 @@
   </div>
 </div>
 
-<!-- Savory Stacks Section -->
-<div class="food-section" data-category="Savory Stacks">
-  <div class="row g-4">
-
-    <!-- 1. Veg Pizza Slice -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Veg_Pizza_Slice.jpg" alt="Veg Pizza Slice">
-          <div class="ms-3">
-            <h5 class="mb-1">Veg Pizza Slice</h5>
-            <small class="text-muted">200g · 320 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Cheesy slice topped with tomato, capsicum & onion.</p>
-            <h6 class="fw-bold">₹ 135.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2. Paneer Puff Roll -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Paneer_Puff_Roll.jpg" alt="Paneer Puff Roll">
-          <div class="ms-3">
-            <h5 class="mb-1">Paneer Puff Roll</h5>
-            <small class="text-muted">180g · 290 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Flaky roll stuffed with spicy paneer bhurji.</p>
-            <h6 class="fw-bold">₹ 120.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3. Masala Khari -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Masala_Khari.jpg" alt="Masala Khari">
-          <div class="ms-3">
-            <h5 class="mb-1">Masala Khari</h5>
-            <small class="text-muted">160g · 270 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Crispy puff khari layered with Indian masala mix.</p>
-            <h6 class="fw-bold">₹ 80.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4. Corn & Cheese Puff -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Corn_Cheese_Puff.jpg" alt="Corn & Cheese Puff">
-          <div class="ms-3">
-            <h5 class="mb-1">Corn & Cheese Puff</h5>
-            <small class="text-muted">190g · 310 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Delicious puff with creamy corn & melting cheese.</p>
-            <h6 class="fw-bold">₹ 115.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5. Veg Puff -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Veg_Puff.jpg" alt="Veg Puff">
-          <div class="ms-3">
-            <h5 class="mb-1">Veg Puff</h5>
-            <small class="text-muted">170g · 300 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Traditional puff stuffed with spicy mixed veggies.</p>
-            <h6 class="fw-bold">₹ 95.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6. Cheese Burst Bites -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <div class="d-flex align-items-center">
-          <img src="Cheese_Burst_Bites.jpg" alt="Cheese Burst Bites">
-          <div class="ms-3">
-            <h5 class="mb-1">Cheese Burst Bites</h5>
-            <small class="text-muted">160g · 330 kcal</small>
-            <p class="mb-1 mt-1 text-muted small">Mini bites with explosive cheesy flavor in every bite.</p>
-            <h6 class="fw-bold">₹ 130.00</h6>
-            <button class="btn btn-sm btn-add">Add Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 
 <!-- Peri Peri Fries Section -->
@@ -784,7 +707,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Classic_Fries.jpg" alt="Classic Fries">
+          <img src="Classic Fries.jpg" alt="Classic Fries">
           <div class="ms-3">
             <h5 class="mb-1">Classic Fries</h5>
             <small class="text-muted">180g · 290 kcal</small>
@@ -800,7 +723,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Peri_Peri_Fries.jpg" alt="Peri Peri Fries">
+          <img src="Peri Peri Fries.jpg" alt="Peri Peri Fries">
           <div class="ms-3">
             <h5 class="mb-1">Peri Peri Fries</h5>
             <small class="text-muted">190g · 310 kcal</small>
@@ -816,7 +739,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Cheese_Loaded_Fries.jpg" alt="Cheese Loaded Fries">
+          <img src="Cheese Loaded Fries.jpg" alt="Cheese Loaded Fries">
           <div class="ms-3">
             <h5 class="mb-1">Cheese Loaded Fries</h5>
             <small class="text-muted">210g · 340 kcal</small>
@@ -832,7 +755,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Chilli_Garlic_Fries.jpg" alt="Chilli Garlic Fries">
+          <img src="Chilli Garlic Fries.jpg" alt="Chilli Garlic Fries">
           <div class="ms-3">
             <h5 class="mb-1">Chilli Garlic Fries</h5>
             <small class="text-muted">200g · 330 kcal</small>
@@ -848,7 +771,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Masala_Fries.jpg" alt="Masala Fries">
+          <img src="Masala Fries.jpg" alt="Masala Fries">
           <div class="ms-3">
             <h5 class="mb-1">Masala Fries</h5>
             <small class="text-muted">180g · 280 kcal</small>
@@ -864,7 +787,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Tandoori_Mayo_Fries.jpg" alt="Tandoori Mayo Fries">
+          <img src="Tandoori Mayo Fries.jpg" alt="Tandoori Mayo Fries">
           <div class="ms-3">
             <h5 class="mb-1">Tandoori Mayo Fries</h5>
             <small class="text-muted">210g · 360 kcal</small>
@@ -887,7 +810,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Chocolate_Brownie.jpg" alt="Chocolate Brownie">
+          <img src="Chocolate Brownie.jpg" alt="Chocolate Brownie">
           <div class="ms-3">
             <h5 class="mb-1">Chocolate Brownie</h5>
             <small class="text-muted">150g · 390 kcal</small>
@@ -903,7 +826,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Red_Velvet_Pastry.jpg" alt="Red Velvet Pastry">
+          <img src="Red-Velvet-Cake-5.jpg" alt="Red Velvet Pastry">
           <div class="ms-3">
             <h5 class="mb-1">Red Velvet Pastry</h5>
             <small class="text-muted">180g · 350 kcal</small>
@@ -919,7 +842,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Chocolate_Muffin.jpg" alt="Chocolate Muffin">
+          <img src="Chocolate Muffin.jpg" alt="Chocolate Muffin">
           <div class="ms-3">
             <h5 class="mb-1">Chocolate Muffin</h5>
             <small class="text-muted">160g · 320 kcal</small>
@@ -935,7 +858,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Choco_Lava_Cake.jpg" alt="Choco Lava Cake">
+          <img src="Choco Lava Cake.webp" alt="Choco Lava Cake">
           <div class="ms-3">
             <h5 class="mb-1">Choco Lava Cake</h5>
             <small class="text-muted">140g · 360 kcal</small>
@@ -951,7 +874,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Strawberry_Cheesecake.jpg" alt="Strawberry Cheesecake">
+          <img src="Strawberry Cheesecake.jpg" alt="Strawberry Cheesecake">
           <div class="ms-3">
             <h5 class="mb-1">Strawberry Cheesecake</h5>
             <small class="text-muted">200g · 370 kcal</small>
@@ -967,7 +890,7 @@
     <div class="col-md-4">
       <div class="card p-3">
         <div class="d-flex align-items-center">
-          <img src="Oreo_Mousse.jpg" alt="Oreo Mousse Cup">
+          <img src="Oreo Mousse Cup.webp" alt="Oreo Mousse Cup">
           <div class="ms-3">
             <h5 class="mb-1">Oreo Mousse Cup</h5>
             <small class="text-muted">180g · 340 kcal</small>
@@ -981,120 +904,145 @@
 
   </div>
 </div>
-
-  
-
-
-<!-- Add Item Modal -->
-<div class="modal fade" id="addItemModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content p-3">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalTitle">Order</h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img id="modalImage" src="" class="img-fluid mb-3" style="max-width: 200px;">
-        <p id="modalDesc">Item description goes here.</p>
-        <h6 class="fw-bold">₹ <span id="modalPrice">0.00</span></h6>
-        <div class="d-flex justify-content-center align-items-center my-3">
-          <button class="btn btn-outline-secondary btn-sm me-2" onclick="changeQuantity(-1)">-</button>
-          <span id="quantity" class="mx-3">1</span>
-          <button class="btn btn-outline-secondary btn-sm ms-2" onclick="changeQuantity(1)">+</button>
-        </div>
-        <button class="btn btn-success w-100" onclick="placeOrder()">Order</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Order Success Modal -->
-<div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content text-center p-4">
-      <div class="modal-body">
-        <h1 class="text-success display-5">✅</h1>
-        <h5 class="fw-bold mt-3">Order Successful!</h5>
-        <p class="text-muted">"Your item has been ordered."🎉</p>
-        <button class="btn btn-outline-success mt-3" data-bs-dismiss="modal">Ok</button>
-      </div>
-    </div>
-  </div>
-</div>
-<br><br>
-
+<br><br><br><br>
 <!-- Font Awesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-<!-- Footer Start -->
-<footer style="background-color: #fff; padding: 30px 0 20px; border-top: 1px solid #ccc; width: 100%;">
-  <div class="px-3 px-md-5"> <!-- Use padding instead of .container -->
-    <div class="row text-center justify-content-center">
 
-      <!-- Email -->
-      <div class="col-6 col-md-3 mb-3">
-        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
-          <i class="fas fa-envelope text-white" style="line-height: 45px; font-size: 16px;"></i>
+  <!-- Modals -->
+  <div class="modal fade" id="addItemModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">Order</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Email</h6>
-        <p style="font-size: 13px;" class="text-muted mb-0">Shaikhanas@Gmail.Com</p>
-        <p style="font-size: 13px;" class="text-muted">Anasbhai@Gmail.Com</p>
-      </div>
-
-      <!-- Opening Hours -->
-      <div class="col-6 col-md-3 mb-3">
-        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
-          <i class="fas fa-clock text-white" style="line-height: 45px; font-size: 16px;"></i>
+        <div class="modal-body text-center">
+          <img id="modalImage" src="" class="img-fluid mb-3" style="max-width: 200px;">
+          <p id="modalDesc">Item description goes here.</p>
+          <h6 class="fw-bold">₹ <span id="modalPrice">0.00</span></h6>
+          <div class="d-flex justify-content-center align-items-center my-3">
+            <button class="btn btn-outline-secondary btn-sm me-2" onclick="changeQuantity(-1)">-</button>
+            <span id="quantity" class="mx-3">1</span>
+            <button class="btn btn-outline-secondary btn-sm ms-2" onclick="changeQuantity(1)">+</button>
+          </div>
+          <button class="btn btn-success w-100" onclick="placeOrder()">Order</button>
         </div>
-        <h6 class="mt-2 mb-1" style="font-size: 16px;">Opening Hours</h6>
-        <p style="font-size: 13px;" class="text-muted">07:00am To 09:00pm</p>
       </div>
-
-      <!-- Location -->
-      <div class="col-6 col-md-3 mb-3">
-        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
-          <i class="fas fa-map-marker-alt text-white" style="line-height: 45px; font-size: 16px;"></i>
-        </div>
-        <h6 class="mt-2 mb-1" style="font-size: 16px;">Shop Location</h6>
-        <p style="font-size: 13px;" class="text-muted">Mumbai, India - 400104</p>
-      </div>
-
-      <!-- Phone -->
-      <div class="col-6 col-md-3 mb-3">
-        <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
-          <i class="fas fa-phone text-white" style="line-height: 45px; font-size: 16px;"></i>
-        </div>
-        <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Number</h6>
-        <p style="font-size: 13px;" class="text-muted mb-0">+123-456-7890</p>
-        <p style="font-size: 13px;" class="text-muted">+111-222-3333</p>
-      </div>
-
     </div>
-
-    <hr style="margin: 10px 0;">
-
-    <p class="text-center text-muted mb-0" style="font-size: 14px;">
-      © Copyright @ 2025 By <span style="color: #c4a484; font-weight: 600;">Maitri</span> | All Rights Reserved!
-    </p>
   </div>
-</footer>
-<!-- Footer End -->
+  <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <div class="modal-body">
+          <h1 class="text-success display-5">✅</h1>
+          <h5 class="fw-bold mt-3">Order Successful!</h5>
+          <p class="text-muted">"Your item has been ordered."🎉</p>
+          <button class="btn btn-outline-success mt-3" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Footer Start -->
+  <footer>
+    <div class="px-3 px-md-5">
+      <div class="row text-center justify-content-center">
+        <!-- Email -->
+        <div class="col-6 col-md-3 mb-3">
+          <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+            <i class="fas fa-envelope text-white" style="line-height: 45px; font-size: 16px;"></i>
+          </div>
+          <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Email</h6>
+          <p style="font-size: 13px;" class="text-muted mb-0">Maitrifulpawar19@gmil.com</p>
+          <p style="font-size: 13px;" class="text-muted">bitsj2024072722@bitbaroda.com</p>
+        </div>
+        <!-- Opening Hours -->
+        <div class="col-6 col-md-3 mb-3">
+          <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+            <i class="fas fa-clock text-white" style="line-height: 45px; font-size: 16px;"></i>
+          </div>
+          <h6 class="mt-2 mb-1" style="font-size: 16px;">Opening Hours</h6>
+          <p style="font-size: 13px;" class="text-muted">07:00am To 09:00pm</p>
+        </div>
+        <!-- Location -->
+        <div class="col-6 col-md-3 mb-3">
+          <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+            <i class="fas fa-map-marker-alt text-white" style="line-height: 45px; font-size: 16px;"></i>
+          </div>
+          <h6 class="mt-2 mb-1" style="font-size: 16px;">Shop Location</h6>
+          <p style="font-size: 13px;" class="text-muted">Vadodara , India - 400104</p>
+        </div>
+        <!-- Phone -->
+        <div class="col-6 col-md-3 mb-3">
+          <div style="background-color: #c4a484; width: 45px; height: 45px; border-radius: 50%; margin: 0 auto;">
+            <i class="fas fa-phone text-white" style="line-height: 45px; font-size: 16px;"></i>
+          </div>
+          <h6 class="mt-2 mb-1" style="font-size: 16px;">Our Number</h6>
+          <p style="font-size: 13px;" class="text-muted mb-0">+123-456-7890</p>
+          <p style="font-size: 13px;" class="text-muted">+111-222-3333</p>
+        </div>
+      </div>
+      <hr style="margin: 10px 0;">
+      <p class="text-center text-muted mb-0" style="font-size: 14px;">
+        © Copyright @ 2025 By <span style="color: #c4a484; font-weight: 600;">Maitri</span> | All Rights Reserved!
+      </p>
+    </div>
+  </footer>
+  <!-- Footer End -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  let quantity = 1;
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Show only the selected food section, hide others
+    function showDrinks(category) {
+      // Highlight the active filter button
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('onclick').includes(category)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      // Hide all sections and show only selected
+      document.querySelectorAll('.food-section').forEach(section => {
+        section.style.display = 'none';
+        section.classList.remove('active');
+      });
+      const activeSection = document.querySelector(`.food-section[data-category="${category}"]`);
+      if (activeSection) {
+        activeSection.style.display = 'block';
+        activeSection.classList.add('active');
+      }
+    }
 
-  function changeQuantity(change) {
-    quantity += change;
-    if (quantity < 1) quantity = 1;
-    document.getElementById("quantity").textContent = quantity;
-  }
+    // Scroll to food section if #food-section in URL
+    document.addEventListener("DOMContentLoaded", function() {
+      // Show your default food section/category if needed
+      let defaultCategory = "Sandwich";
+      showDrinks(defaultCategory);
 
-  function bindAddItemButtons() {
-    const buttons = document.querySelectorAll(".btn-add");
-    buttons.forEach(button => {
-      button.onclick = function () {
+      // If the URL has #food-section, scroll and show
+      if (window.location.hash === "#food-section") {
+        showDrinks(defaultCategory);
+        var foodSection = document.getElementById("food-section");
+        if (foodSection) {
+          setTimeout(() => {
+            foodSection.scrollIntoView({behavior: "smooth"});
+          }, 300);
+        }
+      }
+    });
+
+    let quantity = 1;
+
+    function changeQuantity(change) {
+      quantity += change;
+      if (quantity < 1) quantity = 1;
+      document.getElementById("quantity").textContent = quantity;
+    }
+
+    document.querySelectorAll(".btn-add").forEach(button => {
+      button.addEventListener("click", function () {
         const card = this.closest(".card");
         const img = card.querySelector("img").getAttribute("src");
         const title = card.querySelector("h5").textContent;
@@ -1110,48 +1058,35 @@
 
         const addItemModal = new bootstrap.Modal(document.getElementById('addItemModal'));
         addItemModal.show();
-      };
-    });
-  }
-
-  function placeOrder() {
-    const item = document.getElementById("modalTitle").textContent;
-    const price = document.getElementById("modalPrice").textContent;
-    const qty = document.getElementById("quantity").textContent;
-
-    // Simulate success
-    const addItemModalEl = document.getElementById('addItemModal');
-    const addItemModal = bootstrap.Modal.getInstance(addItemModalEl);
-    addItemModal.hide();
-
-    const successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
-    setTimeout(() => {
-      successModal.show();
-    }, 500);
-  }
-
-  function showDrinks(category) {
-    const sections = document.querySelectorAll('.food-section');
-    sections.forEach(section => {
-      section.style.display = 'none';
+      });
     });
 
-    const activeSection = document.querySelector(`.food-section[data-category="${category}"]`);
-    if (activeSection) {
-      activeSection.style.display = 'block';
+    function placeOrder() {
+      const item = document.getElementById("modalTitle").textContent;
+      const price = document.getElementById("modalPrice").textContent;
+      const qty = document.getElementById("quantity").textContent;
+
+      // Send to PHP backend
+      fetch('save_order.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `item=${encodeURIComponent(item)}&price=${encodeURIComponent(price)}&quantity=${encodeURIComponent(qty)}`
+      })
+      .then(response => response.text())
+      .then(result => {
+        // Hide modal and show order success
+        const addItemModalEl = document.getElementById('addItemModal');
+        const addItemModal = bootstrap.Modal.getInstance(addItemModalEl);
+        addItemModal.hide();
+        const successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
+        setTimeout(() => {
+          successModal.show();
+        }, 500);
+      })
+      .catch(err => {
+        alert("Order failed: " + err);
+      });
     }
-
-    bindAddItemButtons(); // re-bind new buttons
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    showDrinks('Sandwich');
-    bindAddItemButtons(); // initial bind
-  });
-
-  
-</script>
-
-
+  </script>
 </body>
 </html>

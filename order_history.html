@@ -4,10 +4,65 @@
   <meta charset="UTF-8" />
   <title>Order History</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      position: relative;
+      min-height: 100vh;
+      z-index: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+      background: url('images/home-bg.jpg') center/cover no-repeat;
+      filter: blur(8px); /* Adjust blur as needed */
+      width: 100vw;
+      height: 100vh;
+    }
+    .transparent-container {
+      background: rgba(44, 34, 25, 0.4); /* coffee brown with 40% opacity */
+      border-radius: 1rem;
+      box-shadow: 0 2px 16px rgba(169, 139, 139, 0.18);
+      padding: 2rem;
+      margin: 0 auto;
+      max-width: 900px;
+      backdrop-filter: blur(6px); /* optional glass effect */
+    }
+    /* Optionally, make the table itself a bit more transparent, if you want */
+    .transparent-container table {
+      background: transparent !important;
+    }
+
+    /* Underline on hover */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #00754a; /* Optional: Change text color on hover */
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #00754a; /* or your preferred color */
+  transition: width 0.3s;
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after {
+  width: 100%;
+}
+  </style>
 </head>
 <body>
+ <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-    <a href="order.html" class="logo"><img src="images/logo.png" alt="" width="50" height="50"></a>
+    <a href="#home" class="logo"><img src="images/logo.png" alt="" width="50px" height="50px"></a>
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">CoffeeShop</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -15,37 +70,49 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="order.html">Bestseller</a></li>
-          <li class="nav-item"><a class="nav-link" href="drink.html#drink-section">Drink</a></li>
-          <li class="nav-item"><a class="nav-link" href="food.html">Food</a></li>
-          <li class="nav-item"><a class="nav-link active" href="order_history.html">Order History</a></li>
+          <li class="nav-item"><a class="nav-link " href="index.php"><b>Home</b></a></li>
+          <li class="nav-item"><a class="nav-link " href="order.html#product-section"><b>Bestseller</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="drink.html#drink-section"><b>Drink</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="food.html"><b>Food</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="order_history.html"><b>Order History</b></a></li>
+
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- home section starts -->
+  <div class="home-bg">
+    <section class="home" id="home">
+      
+    </section>
+  </div>
+  <!-- home section ends -->
+   
   <div class="container py-5">
     <h2 class="fw-bold mb-4">Order History</h2>
-    <table class="table table-bordered" id="ordersTable">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Item</th>
-          <th>Price (₹)</th>
-          <th>Quantity</th>
-          <th>Subtotal (₹)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Orders will be loaded here -->
-      </tbody>
-      <tfoot>
-        <tr>
-          <th colspan="4" class="text-end">Total</th>
-          <th id="orderTotal">₹ 0</th>
-        </tr>
-      </tfoot>
-    </table>
+    <div class="transparent-container">
+      <table class="table table-bordered" id="ordersTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Price (₹)</th>
+            <th>Quantity</th>
+            <th>Subtotal (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Orders will be loaded here -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="4" class="text-end">Total</th>
+            <th id="orderTotal">₹ 0</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   </div>
 
   <script>
